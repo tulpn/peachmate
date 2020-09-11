@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  ls_redis:
+    container_name: ls_redis
+    image: "redis:latest"
+    expose:
+      - 6379
+    ports:
+      - "6379:6379"
+# networks:
+#   default:
+#     driver: bridge
