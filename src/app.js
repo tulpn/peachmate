@@ -1,6 +1,7 @@
 require('dotenv').config()
 const helmet = require('helmet')
 const express = require("express")
+require("./services/mongodb")
 
 
 // Load Routes and Controllers
@@ -13,6 +14,10 @@ const app = express()
 
 // some security concerns taken care off
 app.use(helmet())
+
+// we want to use json
+app.use(express.json());
+express.urlencoded({ extended: true })
 
 // enforce json for every response
 app.use((req,res, next) => {
