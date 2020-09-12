@@ -2,7 +2,7 @@ require('dotenv').config()
 const helmet = require('helmet')
 const express = require("express")
 require("./services/mongodb")
-
+var cors = require('cors');
 
 // Load Routes and Controllers
 const postsRoutes = require('./routes/posts')
@@ -25,6 +25,19 @@ app.use((req,res, next) => {
     res.setHeader('Content-Type', 'application/json');
     return next()
 })
+
+// cors setup
+var whitelist = ['http://localhost:3000']
+var corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  }
+}
+app.use(cors(corsOptions));
 
 // Define Routes
 app.use("/",postsRoutes)

@@ -66,7 +66,7 @@ exports.postPost = (req, res, next) => {
         items: [newPost]
     }
 
-        res.json(returnData)
+    res.json(returnData)
 }
 
 exports.putPost = (req, res, next) => {
@@ -76,7 +76,7 @@ exports.putPost = (req, res, next) => {
 
     const postId = req.params.id 
 
-    Post.findOneAndUpdate({_id:postId}, {$set: req.body}, { upsert: true, new: true }).then(post => {
+    Post.findOneAndUpdate({_id:postId}, {$set: req.body}, { upsert: true}).then(post => {
        
         returnData = {
             ...returnData,
