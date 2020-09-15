@@ -9,7 +9,7 @@ export default function Sidebar(props) {
   return (
     <div className="sidebar fullHeight">
       <div className="logoCnt">
-        <figure className="image is-3by1">
+        <figure className="image">
           <img src="/logo.png" id="logo" alt="Logo" />
         </figure>
       </div>

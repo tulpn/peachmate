@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import './theme/theme.scss';
 
+import NavigationProvider from "./navigation/NavigationProvider"
+
 import Theme from "./components/Theme/Theme"
-import Sidebar from "./components/Sidebar/Sidebar"
 
 function App() {
 
@@ -47,16 +48,7 @@ function App() {
   
   return (
     <Theme isDarkMode={isDarkMode}>
-        <div className="appCnt fullHeight">
-          <div className="sidebarCnt fullHeight">
-            <Sidebar toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
-          </div>
-          <div className="contentCnt fullHeight">
-            <header className="App-header">
-            {renderedItems}
-            </header>
-          </div>
-        </div>
+        <NavigationProvider toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
     </Theme>
   );
 }
