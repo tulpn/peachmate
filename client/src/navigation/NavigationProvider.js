@@ -4,11 +4,11 @@ import { Route, Switch, Redirect } from "react-router-dom"
 
 import BaseRoute from "../Routes/BaseRoute"
 
-import CalendarContainer from "../container/Calendar"
-import SettingsContainer from "../container/Settings"
-import ConnectContainer from "../container/Connect"
-import DashboardContainer from "../container/Dashboard"
-import PostContainer from "../container/Posts"
+import CalendarContainer from "../container/Calendar/Calendar"
+import SettingsContainer from "../container/Settings/Settings"
+import ConnectContainer from "../container/Connect/Connect"
+import DashboardContainer from "../container/Dashboard/Dashboard"
+import PostContainer from "../container/Posts/Posts"
 
 export default function NavigationProvider(props) {
   return (
