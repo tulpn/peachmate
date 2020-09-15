@@ -35,7 +35,7 @@ function App() {
     if (!loaded){
       init()
     }
-  }, [init])
+  })
 
   const renderedItems = items.map(i => {
     return <div key={i._id}>

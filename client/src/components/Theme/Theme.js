@@ -12,5 +12,5 @@ export default function Theme(props) {
 }
 
 Theme.propTypes = {
-
+    children: PropTypes.element.isRequired
 }
