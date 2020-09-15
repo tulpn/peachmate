@@ -1,0 +1,21 @@
+$gradients: () !default;
+$gradients: map-merge(
+  (
+    purple: linear-gradient(135deg, #6586f6 0%, #8b6ced 100%),
+    royal: linear-gradient(135deg, #ed6ea0 0%, #ec8c69 100%),
+    norse: linear-gradient(135deg, #ec77ab 0%, #7873f5 100%),
+  ),
+  $gradients
+);
+
+// Gradient backgrounds
+@mixin bg-gradient($parent, $gradient) {
+  #{$parent} {
+    background: $gradient;
+  }
+}
+
+// Gradient Classes
+@each $gradient, $value in $gradients {
+  @include bg-gradient(".bg-gradient-#{$gradient}", $value);
+}

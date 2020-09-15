@@ -1,11 +1,15 @@
 import React, {useEffect, useState} from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './theme/theme.scss';
+
+import Theme from "./components/Theme/Theme"
+import Sidebar from "./components/Sidebar/Sidebar"
 
 function App() {
 
   const [loaded, setLoaded]  = useState(false)
   const [items, setItems] = useState([])
+
+  const [isDarkMode, setIsDarkMode] = useState(false)
 
   const init = async () => {
     setLoaded(true)
@@ -19,6 +23,14 @@ function App() {
     }
   }
 
+  const toggleTheme = () => {
+    if(isDarkMode){
+      setIsDarkMode(false)
+    } else {
+      setIsDarkMode(true)
+    }
+  }
+
   useEffect(() => {
     if (!loaded){
       init()
@@ -27,18 +39,25 @@ function App() {
 
   const renderedItems = items.map(i => {
     return <div key={i._id}>
-      <h2>{i.title}</h2>
+      <h2><a href="#">{i.title}</a></h2>
       <p>{i.message}</p>
     </div>
     
   })
-
+  
   return (
-    <div className="App">
-      <header className="App-header">
-       {renderedItems}
-      </header>
-    </div>
+    <Theme isDarkMode={isDarkMode}>
+        <div className="appCnt fullHeight">
+          <div className="sidebarCnt fullHeight">
+            <Sidebar toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
+          </div>
+          <div className="contentCnt fullHeight">
+            <header className="App-header">
+            {renderedItems}
+            </header>
+          </div>
+        </div>
+    </Theme>
   );
 }
 

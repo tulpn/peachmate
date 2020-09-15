@@ -1,0 +1,37 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lato", sans-serif;
+  font-weight: 800;
+}
+
+.asterisk {
+  vertical-align: super;
+  font-size: 12px;
+}
+
+::selection {
+  background: $purple; /* WebKit/Blink Browsers */
+  color: white;
+}
+::-moz-selection {
+  background: $purple; /* WebKit/Blink Browsers */
+  color: white;
+}
+
+.darkTheme h1,
+.darkTheme h2,
+.darkTheme h3,
+.darkTheme h4,
+.darkTheme h5,
+.darkTheme h6 {
+  color: $red;
+}
+
+.darkTheme {
+  background: $darkGrayBg;
+  color: $darkFg;
+}

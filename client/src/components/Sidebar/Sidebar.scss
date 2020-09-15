@@ -1,0 +1,28 @@
+@import "../../theme/colours.scss";
+
+.darkTheme .sidebar {
+  background: $darkGray;
+}
+.sidebar {
+  background: $whiteBg;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar .logoCnt {
+  padding-bottom: 10px;
+}
+
+.sidebar .main {
+  flex: 1;
+}
+
+.sidebar .bottom {
+  height: 60px;
+}
+
+#logo {
+  height: 60px;
+}
