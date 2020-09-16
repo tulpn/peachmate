@@ -1,6 +1,6 @@
 # PeachMate
 
-is a _ReactJS + NodeJS_ application that allows to quickly schedule posts to be published on LinkedIn.
+is a _ReactJS + NodeJS_ web application that allows to quickly schedule posts to be published on LinkedIn.
 
 # Notes
 
@@ -14,7 +14,7 @@ is a _ReactJS + NodeJS_ application that allows to quickly schedule posts to be 
 - ReactJS Front-end
 - Unit & Integration Tests
 - - Jest
-- - Storybook
+- - Storybook w/ Snapshots
 - Bulma CSS Framework
 - SCSS Preprocessing
 - Custom Bulma Theming
@@ -31,3 +31,8 @@ is a _ReactJS + NodeJS_ application that allows to quickly schedule posts to be 
 - Helmet, Cors, Bull, DotEnv
 
 # Todos
+
+- Dockerise Front-End
+- Create Makefile
+- Add Mock Mongo for developer setup
+- Add Test Mongodb for test server setup

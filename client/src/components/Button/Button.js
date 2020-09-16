@@ -76,9 +76,10 @@ export default function Button(props) {
         rounded = "is-rounded"
     }
 
+    const finalClasses = `button ${isLoading} ${style} ${size} ${fullwidth} ${outlined} ${inverted} ${rounded}`.trim()
     
   return (
-    <button disabled={props.isDisabled === true} className={`button ${isLoading} ${style} ${size} ${fullwidth} ${outlined} ${inverted} ${rounded}`}>
+    <button disabled={props.isDisabled === true} className={finalClasses}>
         {props.children}
     </button>
   );

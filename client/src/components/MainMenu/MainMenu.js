@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import "./MainMenu.scss"
 
-import {Link} from 'react-router-dom'
+import {Link, Route} from 'react-router-dom'
 
 export default function MainMenu(props) {
   return (
@@ -12,16 +12,46 @@ export default function MainMenu(props) {
             General
         </p>
         <ul className="menu-list">
-            <li><Link to="/">Dashboard</Link></li>
-            <li><Link to="/posts">Posts</Link></li>
-            <li><Link to="/calendar">Calendar</Link></li>
+            <Route exact path='/'>
+                {({ match }) => (
+                    <li>
+                        <Link to='/'  className={match ? "is-active" : undefined}>Dashboard</Link>
+                    </li>
+                )}
+            </Route>
+            <Route exact path='/posts'>
+                {({ match }) => (
+                    <li>
+                        <Link to='/posts'  className={match ? "is-active" : undefined}>Posts</Link>
+                    </li>
+                )}
+            </Route>
+            <Route exact path='/calendar'>
+                {({ match }) => (
+                    <li>
+                        <Link to='/calendar'  className={match ? "is-active" : undefined}>Calendar</Link>
+                    </li>
+                )}
+            </Route>
         </ul>
         <p className="menu-label">
             Accounts
         </p>
         <ul className="menu-list">
-            <li><Link to="/settings">Settings</Link></li>
-            <li><Link to="/connect">Connect</Link></li>
+            <Route exact path='/settings'>
+                {({ match }) => (
+                    <li>
+                        <Link to='/settings'  className={match ? "is-active" : undefined}>Settings</Link>
+                    </li>
+                )}
+            </Route>
+            <Route exact path='/connect'>
+                {({ match }) => (
+                    <li>
+                        <Link to='/connect'  className={match ? "is-active" : undefined}>Connect</Link>
+                    </li>
+                )}
+            </Route>
         </ul>
        
         </aside>
