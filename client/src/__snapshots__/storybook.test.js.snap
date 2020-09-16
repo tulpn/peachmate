@@ -4,6 +4,7 @@ exports[`Storyshots Components/Button Black Button 1`] = `
 <button
   className="button"
   disabled={false}
+  title=""
 >
   Sample Button
 </button>
@@ -13,6 +14,7 @@ exports[`Storyshots Components/Button Danger Button 1`] = `
 <button
   className="button  is-danger"
   disabled={false}
+  title=""
 >
   Sample Button
 </button>
@@ -22,6 +24,7 @@ exports[`Storyshots Components/Button Dark Button 1`] = `
 <button
   className="button  is-dark"
   disabled={false}
+  title=""
 >
   Sample Button
 </button>
@@ -31,6 +34,7 @@ exports[`Storyshots Components/Button Disabled Button 1`] = `
 <button
   className="button  is-primary"
   disabled={true}
+  title=""
 >
   Sample Button
 </button>
@@ -40,6 +44,7 @@ exports[`Storyshots Components/Button Full Button 1`] = `
 <button
   className="button  is-primary  is-fullwidth"
   disabled={false}
+  title=""
 >
   Sample Button
 </button>
@@ -49,6 +54,7 @@ exports[`Storyshots Components/Button Info Button 1`] = `
 <button
   className="button  is-info"
   disabled={false}
+  title=""
 >
   Sample Button
 </button>
@@ -58,6 +64,7 @@ exports[`Storyshots Components/Button Inverted Button 1`] = `
 <button
   className="button  is-primary    is-inverted"
   disabled={false}
+  title=""
 >
   Sample Button
 </button>
@@ -67,6 +74,7 @@ exports[`Storyshots Components/Button Large Button 1`] = `
 <button
   className="button  is-primary is-large"
   disabled={false}
+  title=""
 >
   Sample Button
 </button>
@@ -76,6 +84,7 @@ exports[`Storyshots Components/Button Light Button 1`] = `
 <button
   className="button  is-light"
   disabled={false}
+  title=""
 >
   Sample Button
 </button>
@@ -85,6 +94,7 @@ exports[`Storyshots Components/Button Link Button 1`] = `
 <button
   className="button  is-link"
   disabled={false}
+  title=""
 >
   Sample Button
 </button>
@@ -94,6 +104,7 @@ exports[`Storyshots Components/Button Medium Button 1`] = `
 <button
   className="button  is-primary is-medium"
   disabled={false}
+  title=""
 >
   Sample Button
 </button>
@@ -103,6 +114,7 @@ exports[`Storyshots Components/Button Outlined Button 1`] = `
 <button
   className="button  is-primary   is-outlined"
   disabled={false}
+  title=""
 >
   Sample Button
 </button>
@@ -112,6 +124,7 @@ exports[`Storyshots Components/Button Primary Button 1`] = `
 <button
   className="button  is-primary"
   disabled={false}
+  title=""
 >
   Sample Button
 </button>
@@ -121,6 +134,7 @@ exports[`Storyshots Components/Button Rounded Button 1`] = `
 <button
   className="button  is-primary     is-rounded"
   disabled={false}
+  title=""
 >
   Sample Button
 </button>
@@ -130,6 +144,7 @@ exports[`Storyshots Components/Button Small Button 1`] = `
 <button
   className="button  is-primary is-small"
   disabled={false}
+  title=""
 >
   Sample Button
 </button>
@@ -139,6 +154,7 @@ exports[`Storyshots Components/Button Success Button 1`] = `
 <button
   className="button  is-success"
   disabled={false}
+  title=""
 >
   Sample Button
 </button>
@@ -148,6 +164,7 @@ exports[`Storyshots Components/Button Text Button 1`] = `
 <button
   className="button  is-text"
   disabled={false}
+  title=""
 >
   Sample Button
 </button>
@@ -157,6 +174,7 @@ exports[`Storyshots Components/Button Warning Button 1`] = `
 <button
   className="button  is-warning"
   disabled={false}
+  title=""
 >
   Sample Button
 </button>
@@ -166,6 +184,7 @@ exports[`Storyshots Components/Button White Button 1`] = `
 <button
   className="button  is-white"
   disabled={false}
+  title=""
 >
   Sample Button
 </button>
