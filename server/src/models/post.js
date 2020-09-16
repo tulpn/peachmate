@@ -11,7 +11,11 @@ const postSchema = new Schema({
         enum: ['linkedin', 'twitter'],
         default: 'linkedin'
     },
-    posted: Schema.Types.Boolean
+    status: {
+        type: String, 
+        enum: ['cancelled', 'posted', 'scheduled', 'deleted'],
+        default: 'scheduled'
+    }
 });
 
 module.exports = mongoose.model("Post", postSchema)

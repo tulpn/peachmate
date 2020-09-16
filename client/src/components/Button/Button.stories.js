@@ -12,102 +12,87 @@ const Template = (args) => <Button {...args} >Sample Button</Button>;
 export const PrimaryButton = Template.bind({});
 
 PrimaryButton.args = {
-  /* the args you need here will depend on your component */
-  isPrimary: true,
+  isPrimary: true
 };
 
 export const LinkButton = Template.bind({});
 
 LinkButton.args = {
-  /* the args you need here will depend on your component */
-  isLink: true,
+  isLink: true
 };
 
 
 export const InfoButton = Template.bind({});
 
 InfoButton.args = {
-  /* the args you need here will depend on your component */
-  isInfo: true,
+  isInfo: true
 };
 
 
 export const SuccessButton = Template.bind({});
 
 SuccessButton.args = {
-  /* the args you need here will depend on your component */
-  isSuccess: true,
+  isSuccess: true
 };
 
 export const WarningButton = Template.bind({});
 
 WarningButton.args = {
-  /* the args you need here will depend on your component */
-  isWarning: true,
+  isWarning: true
 };
 
 
 export const DangerButton = Template.bind({});
 
 DangerButton.args = {
-  /* the args you need here will depend on your component */
-  isDanger: true,
+  isDanger: true
 };
 
 
 export const WhiteButton = Template.bind({});
 
 WhiteButton.args = {
-  /* the args you need here will depend on your component */
-  isWhite: true,
+  isWhite: true
 };
 
 
 export const LightButton = Template.bind({});
 
 LightButton.args = {
-  /* the args you need here will depend on your component */
-  isLight: true,
+  isLight: true
 };
 
 
 export const DarkButton = Template.bind({});
 
 DarkButton.args = {
-  /* the args you need here will depend on your component */
-  isDark: true,
+  isDark: true
 };
 
 export const BlackButton = Template.bind({});
 
 BlackButton.args = {
-  /* the args you need here will depend on your component */
-  isBlack: true,
+  isBlack: true
 };
 
 export const TextButton = Template.bind({});
 
 TextButton.args = {
-  /* the args you need here will depend on your component */
-  isText: true,
+  isText: true
 };
-
 
 
 export const SmallButton = Template.bind({});
 
 SmallButton.args = {
-  /* the args you need here will depend on your component */
   isPrimary: true,
   isSmall: true
 };
 
 
-
 export const MediumButton = Template.bind({});
 
 MediumButton.args = {
-  /* the args you need here will depend on your component */
   isPrimary: true,
   isMedium: true
 };
@@ -115,7 +100,6 @@ MediumButton.args = {
 export const LargeButton = Template.bind({});
 
 LargeButton.args = {
-  /* the args you need here will depend on your component */
   isPrimary: true,
   isLarge: true
 };
@@ -124,17 +108,14 @@ LargeButton.args = {
 export const FullButton = Template.bind({});
 
 FullButton.args = {
-  /* the args you need here will depend on your component */
   isPrimary: true,
   isFullWidth: true
 };
 
 
-
 export const OutlinedButton = Template.bind({});
 
 OutlinedButton.args = {
-  /* the args you need here will depend on your component */
   isPrimary: true,
   isOutlined: true
 };
@@ -143,7 +124,6 @@ OutlinedButton.args = {
 export const InvertedButton = Template.bind({});
 
 InvertedButton.args = {
-  /* the args you need here will depend on your component */
   isPrimary: true,
   isInverted: true
 };
@@ -152,17 +132,14 @@ InvertedButton.args = {
 export const RoundedButton = Template.bind({});
 
 RoundedButton.args = {
-  /* the args you need here will depend on your component */
   isPrimary: true,
   isRounded: true
 };
 
 
-
 export const DisabledButton = Template.bind({});
 
 DisabledButton.args = {
-  /* the args you need here will depend on your component */
   isPrimary: true,
   isDisabled: true
 };

@@ -58,7 +58,7 @@ exports.postPost = (req, res, next) => {
     newPost.message = req.body.message || ""
     newPost.when = req.body.when || null
     newPost.network = req.body.network || "linkedin"
-    newPost.posted = false
+    newPost.status = "scheduled"
     newPost.save()
 
     returnData = {

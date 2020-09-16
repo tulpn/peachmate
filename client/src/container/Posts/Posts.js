@@ -10,8 +10,8 @@ export default function PostContainer() {
   const [loaded, setLoaded] = useState(false);
   const [items, setItems] = useState([]);
 
+
   const init = async () => {
-    setLoaded(true);
     const res = await fetch("http://localhost:8888/");
     const body = await res.json();
 
@@ -20,46 +20,13 @@ export default function PostContainer() {
     } else {
       setItems(body.items);
     }
+    setLoaded(true);
   };
 
   useEffect(() => {
     if (!loaded) {
       init();
     }
-  });
-
-  const renderedItems = items.map((i) => {
-    return (
-      <tr key={i._id}>
-        <td>{i.network === "linkedin" ? <span className="icon ">
-                <i class="fab fa-linkedin-in"></i>
-              </span> : <span>U</span>}</td>
-        <td>
-          <p>{i.message}</p>
-        </td>
-        <td>date</td>
-        <td>{i.posted === true ? <span class="tag is-success">Posted</span> : <span class="tag is-info">Scheduled</span> }</td>
-        <td>
-          <p className="buttons ">
-            <Button isDanger title="Cancel Post">
-              <span className="icon is-small">
-                <i className="fas fa-window-close"></i>
-              </span>
-            </Button>
-            <Button isInfo title="Edit Post">
-              <span className="icon is-small">
-                <i className="fas fa-edit"></i>
-              </span>
-            </Button>
-            <Button isSuccess title="Manually Share now">
-              <span className="icon is-small">
-                <i className="fas fa-share"></i>
-              </span>
-            </Button>
-          </p>
-        </td>
-      </tr>
-    );
   });
 
   return (
@@ -71,7 +38,7 @@ export default function PostContainer() {
         </div>
       </Level>
 
-      <PostTable items={items}/>
+      <PostTable items={items} loading={!loaded}/>
     </div>
   );
 }

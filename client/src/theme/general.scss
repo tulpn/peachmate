@@ -35,3 +35,9 @@ h6 {
   background: $darkGrayBg;
   color: $darkFg;
 }
+
+.is-ellipsed {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-wrap: break-word;
+}

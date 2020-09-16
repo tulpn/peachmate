@@ -189,3 +189,809 @@ exports[`Storyshots Components/Button White Button 1`] = `
   Sample Button
 </button>
 `;
+
+exports[`Storyshots Components/Posts/PostTable Post Table Empty 1`] = `
+<table
+  className="table is-striped is-hoverable is-fullwidth is-bordered is-narrow"
+>
+  <thead>
+    <tr>
+      <th>
+        Network
+      </th>
+      <th>
+        Message
+      </th>
+      <th>
+        Scheduled
+      </th>
+      <th>
+        Posted
+      </th>
+      <th>
+        Actions
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td
+        colSpan="5"
+        rowSpan="1"
+      >
+        <p
+          className="has-text-centered"
+        >
+          No data to show.
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Storyshots Components/Posts/PostTable Post Table Items 1`] = `
+<table
+  className="table is-striped is-hoverable is-fullwidth is-bordered is-narrow"
+>
+  <thead>
+    <tr>
+      <th>
+        Network
+      </th>
+      <th>
+        Message
+      </th>
+      <th>
+        Scheduled
+      </th>
+      <th>
+        Posted
+      </th>
+      <th>
+        Actions
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <span
+          className="icon "
+        >
+          <i
+            class="fab fa-linkedin-in"
+          />
+        </span>
+      </td>
+      <td>
+        <p
+          className="is-ellipsed"
+        >
+          Commodo laborum elit magna in cillum proident.
+        </p>
+      </td>
+      <td>
+        <p>
+          <p>
+            03 Mar 2020
+          </p>
+          <p>
+            13:11:17
+          </p>
+        </p>
+      </td>
+      <td>
+        <span
+          class="tag is-info"
+        >
+          Scheduled
+        </span>
+      </td>
+      <td>
+        <p
+          className="buttons "
+        >
+          <button
+            className="button  is-danger"
+            disabled={false}
+            title="Cancel Post"
+          >
+            <span
+              className="icon is-small"
+            >
+              <i
+                className="fas fa-window-close"
+              />
+            </span>
+          </button>
+          <button
+            className="button  is-info"
+            disabled={false}
+            title="Edit Post"
+          >
+            <span
+              className="icon is-small"
+            >
+              <i
+                className="fas fa-edit"
+              />
+            </span>
+          </button>
+          <button
+            className="button  is-success"
+            disabled={false}
+            title="Manually Share now"
+          >
+            <span
+              className="icon is-small"
+            >
+              <i
+                className="fas fa-share"
+              />
+            </span>
+          </button>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span
+          className="icon "
+        >
+          <i
+            class="fab fa-linkedin-in"
+          />
+        </span>
+      </td>
+      <td>
+        <p
+          className="is-ellipsed"
+        >
+          Minim aliqua excepteur commodo elit dolore in. Proident sint ut cillum laborum eiusmod ea enim quis sunt deserunt magna.
+        </p>
+      </td>
+      <td>
+        <p>
+          <p>
+            17 Dec 2021
+          </p>
+          <p>
+            05:12:30
+          </p>
+        </p>
+      </td>
+      <td>
+        <span
+          class="tag is-success"
+        >
+          Posted
+        </span>
+      </td>
+      <td>
+        <p
+          className="buttons "
+        >
+          <button
+            className="button  is-danger"
+            disabled={true}
+            title="Cancel Post"
+          >
+            <span
+              className="icon is-small"
+            >
+              <i
+                className="fas fa-window-close"
+              />
+            </span>
+          </button>
+          <button
+            className="button  is-info"
+            disabled={true}
+            title="Edit Post"
+          >
+            <span
+              className="icon is-small"
+            >
+              <i
+                className="fas fa-edit"
+              />
+            </span>
+          </button>
+          <button
+            className="button  is-success"
+            disabled={true}
+            title="Manually Share now"
+          >
+            <span
+              className="icon is-small"
+            >
+              <i
+                className="fas fa-share"
+              />
+            </span>
+          </button>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span
+          className="icon "
+        >
+          <i
+            class="fab fa-linkedin-in"
+          />
+        </span>
+      </td>
+      <td>
+        <p
+          className="is-ellipsed"
+        >
+          Quis commodo officia cupidatat non velit veniam tempor deserunt.
+        </p>
+      </td>
+      <td>
+        <p>
+          <p>
+            13 Jun 2021
+          </p>
+          <p>
+            01:10:08
+          </p>
+        </p>
+      </td>
+      <td>
+        <span
+          class="tag is-warning"
+        >
+          Cancelled
+        </span>
+      </td>
+      <td>
+        <p
+          className="buttons "
+        >
+          <button
+            className="button  is-danger"
+            disabled={true}
+            title="Cancel Post"
+          >
+            <span
+              className="icon is-small"
+            >
+              <i
+                className="fas fa-window-close"
+              />
+            </span>
+          </button>
+          <button
+            className="button  is-info"
+            disabled={false}
+            title="Edit Post"
+          >
+            <span
+              className="icon is-small"
+            >
+              <i
+                className="fas fa-edit"
+              />
+            </span>
+          </button>
+          <button
+            className="button  is-success"
+            disabled={false}
+            title="Manually Share now"
+          >
+            <span
+              className="icon is-small"
+            >
+              <i
+                className="fas fa-share"
+              />
+            </span>
+          </button>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span
+          className="icon "
+        >
+          <i
+            class="fab fa-linkedin-in"
+          />
+        </span>
+      </td>
+      <td>
+        <p
+          className="is-ellipsed"
+        >
+          Adipisicing aliquip est commodo officia anim.
+        </p>
+      </td>
+      <td>
+        <p>
+          <p>
+            11 Jan 2022
+          </p>
+          <p>
+            03:11:10
+          </p>
+        </p>
+      </td>
+      <td>
+        <span
+          class="tag is-danger"
+        >
+          Deleted
+        </span>
+      </td>
+      <td>
+        <p
+          className="buttons "
+        >
+          <button
+            className="button  is-danger"
+            disabled={true}
+            title="Cancel Post"
+          >
+            <span
+              className="icon is-small"
+            >
+              <i
+                className="fas fa-window-close"
+              />
+            </span>
+          </button>
+          <button
+            className="button  is-info"
+            disabled={true}
+            title="Edit Post"
+          >
+            <span
+              className="icon is-small"
+            >
+              <i
+                className="fas fa-edit"
+              />
+            </span>
+          </button>
+          <button
+            className="button  is-success"
+            disabled={true}
+            title="Manually Share now"
+          >
+            <span
+              className="icon is-small"
+            >
+              <i
+                className="fas fa-share"
+              />
+            </span>
+          </button>
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Storyshots Components/Posts/PostTable Post Table Loading 1`] = `
+<table
+  className="table is-striped is-hoverable is-fullwidth is-bordered is-narrow"
+>
+  <thead>
+    <tr>
+      <th>
+        Network
+      </th>
+      <th>
+        Message
+      </th>
+      <th>
+        Scheduled
+      </th>
+      <th>
+        Posted
+      </th>
+      <th>
+        Actions
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td
+        colSpan="5"
+        rowSpan="1"
+      >
+        <div
+          className="level"
+        >
+          <div
+            className="level-item"
+          >
+            <div
+              className="lds-ring is-medium"
+            >
+              <div />
+              <div />
+              <div />
+              <div />
+            </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Storyshots Components/Posts/PostTableItem Post Table Item Cancelled 1`] = `
+<table
+  className="table  is-striped is-hoverable is-fullwidth is-bordered is-narrow"
+>
+  <tbody>
+    <tr>
+      <td>
+        <span
+          className="icon "
+        >
+          <i
+            class="fab fa-linkedin-in"
+          />
+        </span>
+      </td>
+      <td>
+        <p
+          className="is-ellipsed"
+        >
+          Do proident aute aliquip officia officia laboris aliquip anim officia et.
+        </p>
+      </td>
+      <td>
+        <p>
+          <p>
+            09 Nov 2020
+          </p>
+          <p>
+            13:11:17
+          </p>
+        </p>
+      </td>
+      <td>
+        <span
+          class="tag is-warning"
+        >
+          Cancelled
+        </span>
+      </td>
+      <td>
+        <p
+          className="buttons "
+        >
+          <button
+            className="button  is-danger"
+            disabled={true}
+            title="Cancel Post"
+          >
+            <span
+              className="icon is-small"
+            >
+              <i
+                className="fas fa-window-close"
+              />
+            </span>
+          </button>
+          <button
+            className="button  is-info"
+            disabled={false}
+            title="Edit Post"
+          >
+            <span
+              className="icon is-small"
+            >
+              <i
+                className="fas fa-edit"
+              />
+            </span>
+          </button>
+          <button
+            className="button  is-success"
+            disabled={false}
+            title="Manually Share now"
+          >
+            <span
+              className="icon is-small"
+            >
+              <i
+                className="fas fa-share"
+              />
+            </span>
+          </button>
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Storyshots Components/Posts/PostTableItem Post Table Item Deleted 1`] = `
+<table
+  className="table  is-striped is-hoverable is-fullwidth is-bordered is-narrow"
+>
+  <tbody>
+    <tr>
+      <td>
+        <span
+          className="icon "
+        >
+          <i
+            class="fab fa-linkedin-in"
+          />
+        </span>
+      </td>
+      <td>
+        <p
+          className="is-ellipsed"
+        >
+          Aute occaecat aliquip do pariatur voluptate reprehenderit duis.
+        </p>
+      </td>
+      <td>
+        <p>
+          <p>
+            09 Nov 2020
+          </p>
+          <p>
+            13:11:17
+          </p>
+        </p>
+      </td>
+      <td>
+        <span
+          class="tag is-danger"
+        >
+          Deleted
+        </span>
+      </td>
+      <td>
+        <p
+          className="buttons "
+        >
+          <button
+            className="button  is-danger"
+            disabled={true}
+            title="Cancel Post"
+          >
+            <span
+              className="icon is-small"
+            >
+              <i
+                className="fas fa-window-close"
+              />
+            </span>
+          </button>
+          <button
+            className="button  is-info"
+            disabled={true}
+            title="Edit Post"
+          >
+            <span
+              className="icon is-small"
+            >
+              <i
+                className="fas fa-edit"
+              />
+            </span>
+          </button>
+          <button
+            className="button  is-success"
+            disabled={true}
+            title="Manually Share now"
+          >
+            <span
+              className="icon is-small"
+            >
+              <i
+                className="fas fa-share"
+              />
+            </span>
+          </button>
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Storyshots Components/Posts/PostTableItem Post Table Item Posted 1`] = `
+<table
+  className="table  is-striped is-hoverable is-fullwidth is-bordered is-narrow"
+>
+  <tbody>
+    <tr>
+      <td>
+        <span
+          className="icon "
+        >
+          <i
+            class="fab fa-linkedin-in"
+          />
+        </span>
+      </td>
+      <td>
+        <p
+          className="is-ellipsed"
+        >
+          Cupidatat elit minim dolore Lorem est sit.
+        </p>
+      </td>
+      <td>
+        <p>
+          <p>
+            03 Mar 2020
+          </p>
+          <p>
+            13:11:17
+          </p>
+        </p>
+      </td>
+      <td>
+        <span
+          class="tag is-success"
+        >
+          Posted
+        </span>
+      </td>
+      <td>
+        <p
+          className="buttons "
+        >
+          <button
+            className="button  is-danger"
+            disabled={true}
+            title="Cancel Post"
+          >
+            <span
+              className="icon is-small"
+            >
+              <i
+                className="fas fa-window-close"
+              />
+            </span>
+          </button>
+          <button
+            className="button  is-info"
+            disabled={true}
+            title="Edit Post"
+          >
+            <span
+              className="icon is-small"
+            >
+              <i
+                className="fas fa-edit"
+              />
+            </span>
+          </button>
+          <button
+            className="button  is-success"
+            disabled={true}
+            title="Manually Share now"
+          >
+            <span
+              className="icon is-small"
+            >
+              <i
+                className="fas fa-share"
+              />
+            </span>
+          </button>
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Storyshots Components/Posts/PostTableItem Post Table Item Scheduled 1`] = `
+<table
+  className="table  is-striped is-hoverable is-fullwidth is-bordered is-narrow"
+>
+  <tbody>
+    <tr>
+      <td>
+        <span
+          className="icon "
+        >
+          <i
+            class="fab fa-linkedin-in"
+          />
+        </span>
+      </td>
+      <td>
+        <p
+          className="is-ellipsed"
+        >
+          Deserunt et do mollit ad et aliqua ipsum adipisicing dolor.
+        </p>
+      </td>
+      <td>
+        <p>
+          <p>
+            03 Mar 2020
+          </p>
+          <p>
+            13:11:17
+          </p>
+        </p>
+      </td>
+      <td>
+        <span
+          class="tag is-info"
+        >
+          Scheduled
+        </span>
+      </td>
+      <td>
+        <p
+          className="buttons "
+        >
+          <button
+            className="button  is-danger"
+            disabled={false}
+            title="Cancel Post"
+          >
+            <span
+              className="icon is-small"
+            >
+              <i
+                className="fas fa-window-close"
+              />
+            </span>
+          </button>
+          <button
+            className="button  is-info"
+            disabled={false}
+            title="Edit Post"
+          >
+            <span
+              className="icon is-small"
+            >
+              <i
+                className="fas fa-edit"
+              />
+            </span>
+          </button>
+          <button
+            className="button  is-success"
+            disabled={false}
+            title="Manually Share now"
+          >
+            <span
+              className="icon is-small"
+            >
+              <i
+                className="fas fa-share"
+              />
+            </span>
+          </button>
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+`;
+
+exports[`Storyshots Components/SpinningLoader Spinning Loader Item 1`] = `
+<div
+  className="lds-ring is-medium"
+>
+  <div />
+  <div />
+  <div />
+  <div />
+</div>
+`;

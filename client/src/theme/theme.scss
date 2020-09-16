@@ -13,6 +13,8 @@ $family-primary: "Open Sans";
 $primary: $purple;
 $link: $pink;
 
+$menu-item-active-background-color: $purple;
+
 // Import only what you need from Bulma
 @import "../../node_modules/bulma/sass/utilities/_all.sass"; // make sure its first to setup vars
 @import "../../node_modules/bulma/sass/base/_all.sass";

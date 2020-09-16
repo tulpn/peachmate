@@ -52,7 +52,7 @@ describe('Posts', () => {
             nP.title = ""
             nP.when = null
             nP.network = "linkedin"
-            nP.posted = false
+            nP.status = "scheduled"
             nP.message = faker.fake("{{lorem.sentence}}")
             nP.save()
             posts.push(nP)
@@ -91,7 +91,7 @@ describe('Posts', () => {
             nP.title = ""
             nP.when = null
             nP.network = "linkedin"
-            nP.posted = false
+            nP.status = "scheduled"
             nP.message = faker.fake("{{lorem.sentence}}")
             nP.save()
 
@@ -166,7 +166,7 @@ describe('Posts', () => {
             nP.title = testTitle
             nP.when = null
             nP.network = "linkedin"
-            nP.posted = false
+            nP.status = "scheduled"
             nP.message = faker.fake("{{lorem.sentence}}")
             nP.save()
 
