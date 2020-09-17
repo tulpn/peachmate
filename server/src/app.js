@@ -27,7 +27,7 @@ app.use((req,res, next) => {
 })
 
 // cors setup
-var whitelist = ['http://localhost:3000']
+var whitelist = ['http://localhost:3000', "http://127.0.0.1", undefined]
 var corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {

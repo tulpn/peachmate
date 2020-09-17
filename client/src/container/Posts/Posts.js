@@ -5,6 +5,7 @@ import "./Posts.scss";
 import Level from "../../components/Level/Level";
 import Button from "../../components/Button/Button";
 import PostTable from "../../components/Posts/PostTable/PostTable";
+import Post from "../../models/Posts/post";
 
 export default function PostContainer() {
   const [loaded, setLoaded] = useState(false);
@@ -18,7 +19,11 @@ export default function PostContainer() {
     if (res.status !== 200) {
       setItems([]);
     } else {
-      setItems(body.items);
+      setItems(body.items.map(i => {
+        const PostItem = new Post()
+        PostItem.fromServerJSON(i)
+        return PostItem;
+      }))
     }
     setLoaded(true);
   };
