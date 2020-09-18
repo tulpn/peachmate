@@ -6,8 +6,13 @@ import "./Save.scss"
 import Level from "../../../components/Level/Level";
 import Button from "../../../components/Button/Button";
 import BreadCrumbs from "../../../components/BreadCrumbs/BreadCrumbs"
+import SavePostForm from '../../../components/Posts/SavePostForm/SavePostForm';
 
 export default function Save(props) {
+
+  const handleSubmit = (values) => {
+
+  }
   return (
     <div className="postCnt">
         <Level >
@@ -18,7 +23,8 @@ export default function Save(props) {
         </Level>
 
         <BreadCrumbs crumbs={props.crumbs}/>
-  
+
+        <SavePostForm handleSubmit={handleSubmit} />
       </div>
   );
 }
