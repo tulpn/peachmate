@@ -7,7 +7,6 @@ import Post from "../../../models/Posts/post";
 
 export default function PostTable(props) {
 
-  console.log(typeof props.items, props.items)
   const items = props.items.map((i) => (<PostTableItem
     key={i.id}
     network={i.network}

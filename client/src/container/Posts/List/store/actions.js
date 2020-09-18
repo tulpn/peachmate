@@ -6,10 +6,9 @@ export const _reset = () => {
     }
 }
 
-export const _fetchAllStart = (payload) => {
+export const _fetchAllStart = () => {
     return {
         type: "FETCH_ALL_START",
-        payload: payload,
     }
 }
 
@@ -29,12 +28,12 @@ export const _fetchAllFail = () => {
 export const fetchPosts = () => {
     return (dispatch) => {
         dispatch(_fetchAllStart())
-        ApiPostStore.fetchAll()
+        return ApiPostStore.fetchAll()
             .then((response) => {
                 dispatch(_fetchAllSuccess(response.data))
             })
             .catch((error) => {
-                dispatch(_fetchAllFail(error))
+                dispatch(_fetchAllFail())
             })
     }
 }

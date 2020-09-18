@@ -2,6 +2,7 @@ const Post = require("../../models/post")
 
 
 exports.getList = (req, res, next) => {
+    console.log("received req")
     const perPage = 25
     const pageNo = Math.max(1, (req.params.page || 0 ))
 

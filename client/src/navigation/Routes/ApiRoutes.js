@@ -12,7 +12,7 @@ if (process.env.NODE_ENV !== "production") {
     apiEndpoint = "http://localhost:8888/"
 } else {
     // production urls
-    apiEndpoint = ""
+    apiEndpoint = "http://localhost:8888/"
 }
 
 let authenticatedRoutes = []

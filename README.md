@@ -17,6 +17,7 @@ is a _ReactJS + NodeJS_ web application that allows to quickly schedule posts to
 - Unit & Integration Tests
 - - Jest
 - - Storybook w/ Snapshots
+- - Axios Mock Adapter
 - Automatic React Router Breadcrumbs
 - Bulma CSS Framework
 - - SCSS Preprocessing
