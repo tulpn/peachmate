@@ -36,11 +36,6 @@ export default function BaseRoute({
           </BaseLayout>
         );
       }}
-      // render={(props) => (
-      //     <BaseLayout isDarkMode={isDarkMode} toggleTheme={toggleTheme}>
-      //         <Component {...props} />
-      //     </BaseLayout>
-      // )}
     />
   );
 }

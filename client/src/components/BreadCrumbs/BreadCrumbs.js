@@ -1,8 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { Link } from "react-router-dom";
-
 export default function BreadCrumbs(props) {
   // Don't render a single breadcrumb.
   if (
@@ -20,15 +18,15 @@ export default function BreadCrumbs(props) {
         {props.crumbs.map(({ title, path }, key) =>
           key + 1 === props.crumbs.length ? (
             <li className="is-active">
-               <Link key={key} to={path}>
+               <a key={key} href={path}>
                 {title}
-              </Link>
+              </a>
             </li>
           ) : (
             <li>
-              <Link key={key} to={path}>
+              <a key={key} href={path}>
                 {title}
-              </Link>
+              </a>
             </li>
           )
         )}

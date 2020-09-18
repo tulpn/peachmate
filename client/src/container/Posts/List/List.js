@@ -6,6 +6,7 @@ import Level from "../../../components/Level/Level";
 import Button from "../../../components/Button/Button";
 import PostTable from "../../../components/Posts/PostTable/PostTable";
 import Post from "../../../models/Posts/post";
+import BreadCrumbs from '../../../components/BreadCrumbs/BreadCrumbs';
 
 export default function List(props) {
     const [loaded, setLoaded] = useState(false);
@@ -46,6 +47,8 @@ export default function List(props) {
             <p className="subtitle is-5">Browse, schedule, review and analyse your posts.</p>
           </div>
         </Level>
+        
+        <BreadCrumbs crumbs={props.crumbs}/>
   
         <PostTable items={items} loading={!loaded}/>
       </div>

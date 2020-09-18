@@ -1,5 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Components/BreadCrumbs Bread Crumbs Two Steps 1`] = `
+<div
+  aria-label="breadcrumbs"
+  className="breadcrumb "
+>
+  <ul>
+    <li>
+      <a
+        href="/item1"
+      >
+        Item 1
+      </a>
+    </li>
+    <li
+      className="is-active"
+    >
+      <a
+        href="/item1/item2"
+      >
+        Current Item
+      </a>
+    </li>
+  </ul>
+</div>
+`;
+
 exports[`Storyshots Components/Button Black Button 1`] = `
 <button
   className="button"
