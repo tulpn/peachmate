@@ -12,12 +12,15 @@ is a _ReactJS + NodeJS_ web application that allows to quickly schedule posts to
 ## Client
 
 - ReactJS Front-end
+- Redux + ImmutableJs
+- Redux Forms
 - Unit & Integration Tests
 - - Jest
 - - Storybook w/ Snapshots
+- Automatic React Router Breadcrumbs
 - Bulma CSS Framework
-- SCSS Preprocessing
-- Custom Bulma Theming
+- - SCSS Preprocessing
+- - Custom Theming
 - Dark Mode
 
 ## Server
@@ -32,7 +35,7 @@ is a _ReactJS + NodeJS_ web application that allows to quickly schedule posts to
 
 # Todos
 
-- Dockerise Front-End
+- Dockerise Solution
 - Create Makefile
 - Add Mock Mongo for developer setup
-- Add Test Mongodb for test server setup
+- Add Test Mongodb for staging server setup

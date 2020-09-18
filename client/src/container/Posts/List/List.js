@@ -2,31 +2,26 @@ import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import "./List.scss"
 
+import { useSelector, useDispatch } from "react-redux"
+
 import Level from "../../../components/Level/Level";
 import Button from "../../../components/Button/Button";
 import PostTable from "../../../components/Posts/PostTable/PostTable";
 import Post from "../../../models/Posts/post";
 import BreadCrumbs from '../../../components/BreadCrumbs/BreadCrumbs';
 
+import * as postListActions from "./store/actions"
+
 export default function List(props) {
-    const [loaded, setLoaded] = useState(false);
-    const [items, setItems] = useState([]);
+    const dispatch = useDispatch()
+
+    const [initialised, setInitalised] = useState(false);
+    const loading = useSelector((state) => state.get("posts").get("list").get("loading"))
+    const items = useSelector((state) => state.get("posts").get("list").get("posts"))
   
-  
-    const init = async () => {
-      const res = await fetch("http://localhost:8888/");
-      const body = await res.json();
-  
-      if (res.status !== 200) {
-        setItems([]);
-      } else {
-        setItems(body.items.map(i => {
-          const PostItem = new Post()
-          PostItem.fromServerJSON(i)
-          return PostItem;
-        }))
-      }
-      setLoaded(true);
+    const init = () => {
+      dispatch(postListActions.fetchPosts())
+      setInitalised(true);
     };
 
     const createPost = () => {
@@ -34,7 +29,7 @@ export default function List(props) {
     }
   
     useEffect(() => {
-      if (!loaded) {
+      if (!initialised) {
         init();
       }
     });
@@ -49,8 +44,13 @@ export default function List(props) {
         </Level>
         
         <BreadCrumbs crumbs={props.crumbs}/>
+        
   
-        <PostTable items={items} loading={!loaded}/>
+        <PostTable items={items.map(i => {
+                let nP = new Post()
+                nP.fromServerJSON(i.toJS())
+                return nP;
+        }).toArray()} loading={loading}/>
       </div>
     );
 }

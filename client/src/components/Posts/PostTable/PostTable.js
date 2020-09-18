@@ -3,17 +3,18 @@ import PropTypes from "prop-types";
 
 import PostTableItem from "../PostTableItem/PostTableItem";
 import SpinningLoader from "../../SpinningLoader/SpinningLoader";
+import Post from "../../../models/Posts/post";
 
 export default function PostTable(props) {
-  const items = props.items.map((i) => (
-    <PostTableItem
-      key={i._id}
-      network={i.network}
-      message={i.message}
-      status={i.status}
-      when={i.when}
-    />
-  ));
+
+  console.log(typeof props.items, props.items)
+  const items = props.items.map((i) => (<PostTableItem
+    key={i.id}
+    network={i.network}
+    message={i.message}
+    status={i.status}
+    when={i.when}
+  />));
 
   let content = null;
     if (items.length !== 0){
@@ -30,7 +31,7 @@ export default function PostTable(props) {
     );
   }
 
-  if (props.loading === false && props.items.length === 0) {
+  if (props.loading === false && items.length === 0) {
     content = (
       <tr key="nodata">
         <td rowSpan="1" colSpan="5">
