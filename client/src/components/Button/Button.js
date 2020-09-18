@@ -79,7 +79,7 @@ export default function Button(props) {
     const finalClasses = `button ${isLoading} ${style} ${size} ${fullwidth} ${outlined} ${inverted} ${rounded}`.trim()
     
   return (
-    <button disabled={props.isDisabled === true} className={finalClasses} title={props.title.trim()}>
+    <button onClick={props.onClick} disabled={props.isDisabled === true} className={finalClasses} title={props.title.trim()}>
         {props.children}
     </button>
   );

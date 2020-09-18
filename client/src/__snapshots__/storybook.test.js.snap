@@ -260,7 +260,7 @@ exports[`Storyshots Components/Posts/PostTable Post Table Items 1`] = `
           className="icon "
         >
           <i
-            class="fab fa-linkedin-in"
+            className="fab fa-linkedin-in"
           />
         </span>
       </td>
@@ -283,7 +283,7 @@ exports[`Storyshots Components/Posts/PostTable Post Table Items 1`] = `
       </td>
       <td>
         <span
-          class="tag is-info"
+          className="tag is-info"
         >
           Scheduled
         </span>
@@ -340,7 +340,7 @@ exports[`Storyshots Components/Posts/PostTable Post Table Items 1`] = `
           className="icon "
         >
           <i
-            class="fab fa-linkedin-in"
+            className="fab fa-linkedin-in"
           />
         </span>
       </td>
@@ -363,7 +363,7 @@ exports[`Storyshots Components/Posts/PostTable Post Table Items 1`] = `
       </td>
       <td>
         <span
-          class="tag is-success"
+          className="tag is-success"
         >
           Posted
         </span>
@@ -420,7 +420,7 @@ exports[`Storyshots Components/Posts/PostTable Post Table Items 1`] = `
           className="icon "
         >
           <i
-            class="fab fa-linkedin-in"
+            className="fab fa-linkedin-in"
           />
         </span>
       </td>
@@ -443,7 +443,7 @@ exports[`Storyshots Components/Posts/PostTable Post Table Items 1`] = `
       </td>
       <td>
         <span
-          class="tag is-warning"
+          className="tag is-warning"
         >
           Cancelled
         </span>
@@ -500,7 +500,7 @@ exports[`Storyshots Components/Posts/PostTable Post Table Items 1`] = `
           className="icon "
         >
           <i
-            class="fab fa-linkedin-in"
+            className="fab fa-linkedin-in"
           />
         </span>
       </td>
@@ -523,7 +523,7 @@ exports[`Storyshots Components/Posts/PostTable Post Table Items 1`] = `
       </td>
       <td>
         <span
-          class="tag is-danger"
+          className="tag is-danger"
         >
           Deleted
         </span>
@@ -640,7 +640,7 @@ exports[`Storyshots Components/Posts/PostTableItem Post Table Item Cancelled 1`]
           className="icon "
         >
           <i
-            class="fab fa-linkedin-in"
+            className="fab fa-linkedin-in"
           />
         </span>
       </td>
@@ -663,7 +663,7 @@ exports[`Storyshots Components/Posts/PostTableItem Post Table Item Cancelled 1`]
       </td>
       <td>
         <span
-          class="tag is-warning"
+          className="tag is-warning"
         >
           Cancelled
         </span>
@@ -729,7 +729,7 @@ exports[`Storyshots Components/Posts/PostTableItem Post Table Item Deleted 1`] =
           className="icon "
         >
           <i
-            class="fab fa-linkedin-in"
+            className="fab fa-linkedin-in"
           />
         </span>
       </td>
@@ -752,7 +752,7 @@ exports[`Storyshots Components/Posts/PostTableItem Post Table Item Deleted 1`] =
       </td>
       <td>
         <span
-          class="tag is-danger"
+          className="tag is-danger"
         >
           Deleted
         </span>
@@ -818,7 +818,7 @@ exports[`Storyshots Components/Posts/PostTableItem Post Table Item Posted 1`] = 
           className="icon "
         >
           <i
-            class="fab fa-linkedin-in"
+            className="fab fa-linkedin-in"
           />
         </span>
       </td>
@@ -841,7 +841,7 @@ exports[`Storyshots Components/Posts/PostTableItem Post Table Item Posted 1`] = 
       </td>
       <td>
         <span
-          class="tag is-success"
+          className="tag is-success"
         >
           Posted
         </span>
@@ -907,7 +907,7 @@ exports[`Storyshots Components/Posts/PostTableItem Post Table Item Scheduled 1`]
           className="icon "
         >
           <i
-            class="fab fa-linkedin-in"
+            className="fab fa-linkedin-in"
           />
         </span>
       </td>
@@ -930,7 +930,7 @@ exports[`Storyshots Components/Posts/PostTableItem Post Table Item Scheduled 1`]
       </td>
       <td>
         <span
-          class="tag is-info"
+          className="tag is-info"
         >
           Scheduled
         </span>

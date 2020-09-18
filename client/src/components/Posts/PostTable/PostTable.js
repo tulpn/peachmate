@@ -22,7 +22,7 @@ export default function PostTable(props) {
 
   if (props.loading) {
     content = (
-      <tr>
+      <tr key="loading">
         <td rowSpan="1" colSpan="5">
           <SpinningLoader isMedium isCentered />
         </td>
@@ -32,7 +32,7 @@ export default function PostTable(props) {
 
   if (props.loading === false && props.items.length === 0) {
     content = (
-      <tr>
+      <tr key="nodata">
         <td rowSpan="1" colSpan="5">
           <p className="has-text-centered">No data to show.</p>
         </td>

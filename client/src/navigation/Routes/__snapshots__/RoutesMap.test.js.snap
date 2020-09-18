@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`correct routes are exported 1`] = `
+Array [
+  "Dashboard: /",
+  "Dashboard: /dashboard",
+  "Settings: /settings",
+  "Posts: /posts",
+  "Posts: /posts/list",
+  "Save Post: /posts/save",
+  "Calendar: /calendar",
+  "Connect: /connect",
+]
+`;

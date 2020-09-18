@@ -1,26 +1,27 @@
-import React from 'react';
+import React from "react";
 
-import { Switch, Redirect } from "react-router-dom"
+import { Switch, Redirect } from "react-router-dom";
 
-import BaseRoute from "../Routes/BaseRoute"
+import BaseRoute from "./Routes/BaseRoute";
 
-import CalendarContainer from "../container/Calendar/Calendar"
-import SettingsContainer from "../container/Settings/Settings"
-import ConnectContainer from "../container/Connect/Connect"
-import DashboardContainer from "../container/Dashboard/Dashboard"
-import PostContainer from "../container/Posts/Posts"
+import RoutesMap from "./Routes/RoutesMap";
 
 export default function NavigationProvider(props) {
   return (
     <Switch>
-        <BaseRoute path="/dashboard" toggleTheme={props.toggleTheme} isDarkMode={props.isDarkMode} exact component={DashboardContainer} />
-        <BaseRoute path="/settings" exact toggleTheme={props.toggleTheme} isDarkMode={props.isDarkMode} component={SettingsContainer} />
-        <BaseRoute path="/connect" exact toggleTheme={props.toggleTheme} isDarkMode={props.isDarkMode} component={ConnectContainer} />
-        <BaseRoute path="/calendar" toggleTheme={props.toggleTheme} isDarkMode={props.isDarkMode} component={CalendarContainer} />
-        <BaseRoute path="/posts" toggleTheme={props.toggleTheme} isDarkMode={props.isDarkMode} component={PostContainer} />
-        <BaseRoute path="/" toggleTheme={props.toggleTheme} isDarkMode={props.isDarkMode} component={DashboardContainer} />
+      {RoutesMap.map(({path, title, component, exactMatch}, key) => {
+        return <BaseRoute
+          key={key}
+          path={path}
+          toggleTheme={props.toggleTheme}
+          isDarkMode={props.isDarkMode}
+          exact={exactMatch}
+          component={component}
+          routes={RoutesMap}
+        />;
+      })}
 
-        <Redirect to='/' />
+      <Redirect to="/" />
     </Switch>
   );
 }

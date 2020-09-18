@@ -19,7 +19,7 @@ export default function MainMenu(props) {
                     </li>
                 )}
             </Route>
-            <Route exact path='/posts'>
+            <Route path='/posts'>
                 {({ match }) => (
                     <li>
                         <Link to='/posts'  className={match ? "is-active" : undefined}>Posts</Link>

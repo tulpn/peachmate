@@ -46,7 +46,7 @@ export default function PostTableItem(props) {
       <td>
         {props.network === "linkedin" ? (
           <span className="icon ">
-            <i class="fab fa-linkedin-in"></i>
+            <i className="fab fa-linkedin-in"></i>
           </span>
         ) : (
           <span>U</span>
@@ -57,7 +57,7 @@ export default function PostTableItem(props) {
       </td>
       <td>{dateTimeInfo}</td>
       <td>
-        <span class={`tag ${statusClass}`.trim()}>{statusContent}</span>
+        <span className={`tag ${statusClass}`.trim()}>{statusContent}</span>
       </td>
       <td>
         <p className="buttons ">
