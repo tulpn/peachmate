@@ -56,7 +56,7 @@ function fetchAllFail(immutableState, action) {
     newImmutableState = newImmutableState.set("error", CONNECTION_ERROR)
     newImmutableState = newImmutableState.set("fetchAllError", true)
     newImmutableState = newImmutableState.set("fetchAllSuccess", false)
-    newImmutableState = newImmutableState.set("fetchAllFinished", false)
+    newImmutableState = newImmutableState.set("fetchAllFinished", true)
     return newImmutableState
 }
 
