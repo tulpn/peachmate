@@ -17,14 +17,14 @@ export default function BreadCrumbs(props) {
         {/* Link back to any previous steps of the breadcrumb. */}
         {props.crumbs.map(({ title, path }, key) =>
           key + 1 === props.crumbs.length ? (
-            <li className="is-active">
-               <a key={key} href={path}>
+            <li className="is-active" key={key}>
+               <a  href={path}>
                 {title}
               </a>
             </li>
           ) : (
-            <li>
-              <a key={key} href={path}>
+            <li  key={key}>
+              <a href={path}>
                 {title}
               </a>
             </li>
