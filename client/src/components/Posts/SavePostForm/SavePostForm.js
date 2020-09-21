@@ -51,7 +51,7 @@ let SavePostForm = (props) => {
         placeholder=""
         component={FieldComponent}
       >
-        <option value="1">LinkedIn</option>
+        <option value="linkedin">LinkedIn</option>
       </Field>
 
       <div className="field">
@@ -86,7 +86,7 @@ SavePostForm = reduxForm({
 SavePostForm = connect(
     (state) => ({
         initialValues: {
-            network: 1,
+            network: "linkedin",
         },
     }),
     {

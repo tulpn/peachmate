@@ -3,21 +3,25 @@ import PropTypes from "prop-types";
 
 import "./Save.scss";
 
+import { useSelector, useDispatch } from "react-redux";
+
 import Level from "../../../components/Level/Level";
 import Button from "../../../components/Button/Button";
 import BreadCrumbs from "../../../components/BreadCrumbs/BreadCrumbs";
 import SavePostForm from "../../../components/Posts/SavePostForm/SavePostForm";
 
+import * as postSaveActions from "./store/actions"
+import Post from "../../../models/Posts/post";
+
 export default function Save(props) {
+  const dispatch = useDispatch();
+
   const handleSubmit = (values) => {
-    console.log("saving new post", values);
-    const finalData = {
-      title: values.get("title") || null,
-      message: values.get("message")  || null,
-      when: values.get("when")  || null,
-      network: values.get("network") || null,
-    };
-    console.log("saving new post", finalData);
+
+    let nP = new Post(values.get("title"), values.get("message"), values.get("when"), values.get("network"))
+
+    dispatch(postSaveActions.savePost(nP.toServerJSON()))
+
   };
   return (
     <div className="postCnt">

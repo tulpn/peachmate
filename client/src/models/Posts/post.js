@@ -18,13 +18,13 @@ export default class Post {
    * @param {String} status One of "posted", "scheduled", "cancelled", "deleted"
    * @param {String} _id Server Object ID
    */
-  constructor(title, message, when, network, status, _id) {
-    this.title = title;
-    this.message = message;
-    this.when = when;
-    this.network = network;
-    this.status = status;
-    this.id = _id;
+  constructor(element) {
+    this.title = element.title || null;
+    this.message = element.message || null;
+    this.when = element.when || null;
+    this.network = element.network || null;
+    this.status = element.status || null;
+    this.id = element._id || null;
   }
 
   fromServerJSON(data) {
