@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
+import "./SavePostForm.scss";
 
+import { connect } from "react-redux"
 import { Field, reduxForm } from "redux-form/immutable";
 
 import validator from "./validators";
 import warn from "./warn";
 
 import FieldComponent from "../../Forms/FieldComponent/FieldComponent";
+import FieldDatePicker from "../../Forms/FieldDatePicker/FieldDatePicker";
 
 let SavePostForm = (props) => {
   const { handleSubmit } = props;
@@ -31,14 +34,15 @@ let SavePostForm = (props) => {
         placeholder="Lorem Ipsum dolore sit amore"
         component={FieldComponent}
       />
+
       <Field
-        id="when"
+        label="When would you like to publish"
         name="when"
-        type="datetime"
-        label="When"
-        placeholder=""
-        component={FieldComponent}
+        id="when"
+        type="text"
+        component={FieldDatePicker}
       />
+
       <Field
         id="network"
         name="network"
@@ -50,14 +54,16 @@ let SavePostForm = (props) => {
         <option value="1">LinkedIn</option>
       </Field>
 
-      <div>
-        <button
-          type="submit"
-          className="button is-primary"
-          disabled={props.loading}
-        >
-          Save Post
-        </button>
+      <div className="field">
+        <div className="control">
+          <button
+            type="submit"
+            className="button is-primary"
+            disabled={props.loading}
+          >
+            Save
+          </button>
+        </div>
       </div>
     </form>
   );
@@ -75,5 +81,17 @@ SavePostForm = reduxForm({
   validate: validator,
   warn,
 })(SavePostForm);
+
+
+SavePostForm = connect(
+    (state) => ({
+        initialValues: {
+            network: 1,
+        },
+    }),
+    {
+        load: console.log,
+    }
+)(SavePostForm)
 
 export default SavePostForm;

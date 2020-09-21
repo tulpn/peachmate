@@ -51,7 +51,17 @@ export default function FieldComponent(props) {
     classType = "button";
   }
 
+    if (error !== undefined && error !== null && touched ){
+        classType += ' is-danger'
+    }
+
   if (type === "select") {
+      
+    let selectClasses = 'select'
+
+    if (error !== undefined && error !== null && touched ){
+        selectClasses += ' is-danger'
+    }
     return (
       <div className="field">
         {before}
@@ -63,7 +73,7 @@ export default function FieldComponent(props) {
               type={type}
               placeholder={placeholder}
               disabled={disabled}
-              className="select"
+              className={selectClasses}
             >
               {children}
             </select>
@@ -71,19 +81,31 @@ export default function FieldComponent(props) {
         </div>
         {after}
         {touched &&
-          ((error && <span className="inputError">{error}</span>) ||
-            (warning && <span className="inputWarning">{warning}</span>))}
+          ((error && <p className="help is-danger">{error}</p>) ||
+            (warning && <p className="help is-warning">{warning}</p>))}
       </div>
     );
   }
 
   if (type === "textarea") {
+
+
+    let textAreaClasses = 'textarea'
+
+    if (error !== undefined && error !== null && touched ){
+        textAreaClasses += ' is-danger'
+    }
+
     return (
       <div className="field">
         {before}
         <div className="control">
-          <textarea className="textarea"></textarea>
+          <textarea {...input} className={textAreaClasses}></textarea>
         </div>
+        {after}
+        {touched &&
+          ((error && <p className="help is-danger">{error}</p>) ||
+            (warning && <p className="help is-warning">{warning}</p>))}
       </div>
     );
   }
@@ -103,8 +125,8 @@ export default function FieldComponent(props) {
         {after}
       </div>
       {touched &&
-        ((error && <span className="inputError">{error}</span>) ||
-          (warning && <span className="inputWarning">{warning}</span>))}
+        ((error && <p className="help is-danger">{error}</p>) ||
+        (warning && <p className="help is-warning">{warning}</p>))}
     </div>
   );
 }

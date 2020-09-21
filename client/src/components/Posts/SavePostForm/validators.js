@@ -9,7 +9,7 @@ const validator = (values) => {
             presence: true,
         },
         when: {
-            presence: true,
+            presence: false,
         },
         network: {
             presence: true,

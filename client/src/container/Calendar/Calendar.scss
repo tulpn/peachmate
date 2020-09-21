@@ -1,0 +1,8 @@
+@import "react-big-calendar/lib/sass/styles";
+@import "react-big-calendar/lib/addons/dragAndDrop/styles"; // if using DnD
+
+.calendarWrapper {
+  min-height: 500px;
+  height: 50%;
+  justify-content: space-around;
+}
