@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import PropTypes from "prop-types";
 
 import "./Save.scss";
@@ -9,12 +9,15 @@ import Level from "../../../components/Level/Level";
 import Button from "../../../components/Button/Button";
 import BreadCrumbs from "../../../components/BreadCrumbs/BreadCrumbs";
 import SavePostForm from "../../../components/Posts/SavePostForm/SavePostForm";
+import NotificationMessage from "../../../components/NotificationMessage/NotificationMessage"
 
 import * as postSaveActions from "./store/actions"
 import Post from "../../../models/Posts/post";
 
 export default function Save(props) {
   const dispatch = useDispatch();
+  
+  const [notifcationMessage, setNotifcationMessage] = useState(null)
 
   const loading = useSelector((state) =>
     state.get("posts").get("save").get("loading")
@@ -47,8 +50,36 @@ export default function Save(props) {
     let nP = new Post(postData)
 
     dispatch(postSaveActions.savePost(nP.toServerJSON()))
-    
   };
+
+  const notifcationDeleteHandler = () => {
+    setNotifcationMessage(null)
+  }
+
+  const initNotificationMessage = () => {
+    let newNotifcationMessage = null
+    if (loading === false &&  savePostError === false && savePostFinished === true && savePostSuccess === true){
+      newNotifcationMessage = <NotificationMessage isSuccess onDelete={notifcationDeleteHandler}>
+        <p>
+          Post successfully saved.
+        </p>
+      </NotificationMessage>
+    } else if (loading === false &&  savePostError === true && savePostFinished === true && savePostSuccess === false ) {
+      newNotifcationMessage = <NotificationMessage isDanger onDelete={notifcationDeleteHandler}>
+        <p>
+          Post could not be saved. Please check for additional messages.
+        </p>
+      </NotificationMessage>
+    }
+    setNotifcationMessage(newNotifcationMessage)
+  }
+
+  useEffect(() => {
+    initNotificationMessage()
+  }, [savePostError, savePostFinished, savePostSuccess])
+
+
+ 
   return (
     <div className="postCnt">
       <Level>
@@ -61,7 +92,7 @@ export default function Save(props) {
       </Level>
 
       <BreadCrumbs crumbs={props.crumbs} />
-
+      {notifcationMessage}
       <SavePostForm onSubmit={handleSubmit} loading={loading} savePostError={savePostError} savePostSuccess={savePostSuccess} savePostFinished={savePostFinished} error={error} />
     </div>
   );

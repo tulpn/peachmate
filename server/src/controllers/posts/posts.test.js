@@ -49,7 +49,6 @@ describe('Posts', () => {
         
         for (let i=0; i<=25; i++){
             let nP = Post()
-            nP.title = ""
             nP.when = null
             nP.network = "linkedin"
             nP.status = "scheduled"
@@ -74,8 +73,6 @@ describe('Posts', () => {
                     res.body.items.should.have.lengthOf(1)
 
                     res.body.items[0].should.be.a("object")
-                    res.body.items[0].title.should.be.a("String")
-                    res.body.items[0].title.should.equal(posts[25].title)
                     
 
                 done()
@@ -88,7 +85,6 @@ describe('Posts', () => {
 
             // Create a new Item 
             let nP = Post()
-            nP.title = ""
             nP.when = null
             nP.network = "linkedin"
             nP.status = "scheduled"
@@ -113,9 +109,6 @@ describe('Posts', () => {
                     res.body.items.should.have.lengthOf(1)
 
                     res.body.items[0].should.be.a("object")
-
-                    res.body.items[0].title.should.be.a("String")
-                    res.body.items[0].title.should.equal( nP.title)
                     
                     res.body.items[0].network.should.be.a("String")
                     res.body.items[0].network.should.equal( nP.network)
@@ -163,7 +156,6 @@ describe('Posts', () => {
 
             // Create a new Item 
             let nP = Post()
-            nP.title = testTitle
             nP.when = null
             nP.network = "linkedin"
             nP.status = "scheduled"

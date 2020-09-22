@@ -29,16 +29,25 @@ class PostStore extends ApiBase {
     }
     
     /**
-     * Deletes post by updating status to deleted
-     * @param {object} postData 
+     * Deletes post
+     * @param {string} id 
      */
-    delete = (postData) => {
+    deleteItemById = (id) => {
+        if ( id === undefined || id === null ){
+            throw new Error("No data to send")
+        }
+
+        let url = `${this.module}/post/${id}`
+        return this.delete(url)
+    }
+    
+    update = (postData) => {
         if ( postData === undefined || postData === null ){
             throw new Error("No data to send")
         }
 
         let url = `${this.module}/post/${postData.id}`
-        return this.delete(url, postData)
+        return this.put(url, postData)
     }
 }
 

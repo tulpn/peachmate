@@ -9,7 +9,8 @@ export default function PostTableItem(props) {
     statusClass = "is-info",
     deleted = false,
     posted = false,
-    cancelled = false;
+    cancelled = false,
+    canDelete = false;
 
   if (props.status === "posted") {
     statusClass = "is-success";
@@ -23,10 +24,10 @@ export default function PostTableItem(props) {
     cancelled = true;
   }
 
-  if (props.status === "deleted") {
-    statusClass = "is-danger";
-    statusContent = "Deleted";
-    deleted = true;
+  if (props.status === "draft") {
+    statusClass = "is-light";
+    statusContent = "Draft";
+    canDelete = true
   }
 
   let dateTimeInfo = null;
@@ -61,19 +62,30 @@ export default function PostTableItem(props) {
       </td>
       <td>
         <p className="buttons ">
-          <Button
+          {canDelete ? <Button
+            isDanger
+            title="Delete Post"
+            onClick={props.onDelete}
+          >
+            <span className="icon is-small">
+              <i className="fas fa-trash-alt"></i>
+            </span>
+          </Button> : <Button
             isDanger
             title="Cancel Post"
             isDisabled={!(!deleted && !posted && !cancelled)}
+            onClick={props.onCancel}
           >
             <span className="icon is-small">
-              <i className="fas fa-window-close"></i>
+              <i className="fas fa-power-off"></i>
             </span>
-          </Button>
+          </Button> }
+          
           <Button
             isInfo
             title="Edit Post"
             isDisabled={!((!deleted && !posted) || cancelled)}
+            onClick={props.onEdit}
           >
             <span className="icon is-small">
               <i className="fas fa-edit"></i>
@@ -83,6 +95,7 @@ export default function PostTableItem(props) {
             isSuccess
             title="Manually Share now"
             isDisabled={!(!deleted && !posted)}
+            onClick={props.onManuallyShare}
           >
             <span className="icon is-small">
               <i className="fas fa-share"></i>
@@ -96,6 +109,10 @@ export default function PostTableItem(props) {
 
 PostTableItem.propTypes = {
   network: PropTypes.string.isRequired,
-  message: PropTypes.string.isRequired,
-  status: PropTypes.oneOf(["scheduled", "posted", "cancelled", "deleted"]),
+  message: PropTypes.string,
+  status: PropTypes.oneOf(["scheduled", "posted", "cancelled", "draft"]),
+  onDelete: PropTypes.func.isRequired,
+  onCancel: PropTypes.func.isRequired,
+  onEdit: PropTypes.func.isRequired,
+  onManuallyShare: PropTypes.func.isRequired,
 };

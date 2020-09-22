@@ -13,6 +13,10 @@ export default function PostTable(props) {
     message={i.message}
     status={i.status}
     when={i.when}
+    onDelete={() => props.onDeleteItem(i.id)}
+    onCancel={() => props.onChancelItem(i.id)}
+    onEdit={() => props.onEditItem(i.id)}
+    onManuallyShare={() => props.onManuallyShareItem(i.id)}
   />));
 
   let content = null;
@@ -59,6 +63,10 @@ export default function PostTable(props) {
 PostTable.propTypes = {
   items: PropTypes.array.isRequired,
   loading: PropTypes.bool.isRequired,
+  onDeleteItem: PropTypes.func.isRequired,
+  onChancelItem: PropTypes.func.isRequired,
+  onEditItem: PropTypes.func.isRequired,
+  onManuallyShareItem: PropTypes.func.isRequired,
 };
 
 PostTable.defaultProps = {

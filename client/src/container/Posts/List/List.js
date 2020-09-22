@@ -11,6 +11,7 @@ import Post from "../../../models/Posts/post";
 import BreadCrumbs from "../../../components/BreadCrumbs/BreadCrumbs";
 
 import * as postListActions from "./store/actions";
+import * as postActions from "../Save/store/actions"
 
 export default function List(props) {
   const dispatch = useDispatch();
@@ -26,6 +27,25 @@ export default function List(props) {
   const init = () => {
     dispatch(postListActions.fetchPosts());
     setInitalised(true);
+  };
+
+  const onDeleteItemHandler = (id) => {
+    console.log("Delete id", id);
+    dispatch(postActions.deletePost(id))
+  };
+
+  const onChancelItemHandler = (id) => {
+    console.log("Cancel id", id);
+    dispatch(postActions.cancelPost(id))
+  };
+  
+  const onEditItemHandler = (id) => {
+    console.log("Edit id", id);
+    props.history.push(`/posts/${id}`)
+  };
+  const onManuallyShareItemHandler = (id) => {
+    console.log("Manually Share id", id);
+    dispatch(postActions.shareNow(id))
   };
 
   useEffect(() => {
@@ -65,6 +85,10 @@ export default function List(props) {
           return nP;
         })}
         loading={loading}
+        onDeleteItem={onDeleteItemHandler}
+        onChancelItem={onChancelItemHandler}
+        onEditItem={onEditItemHandler}
+        onManuallyShareItem={onManuallyShareItemHandler}
       />
     </div>
   );

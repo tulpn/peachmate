@@ -12,6 +12,12 @@ export const PostTableEmpty = Template.bind({});
 
 PostTableEmpty.args = {
   items: [],
+  argTypes: {
+    onDeleteItem: { action: "Delete clicked" },
+    onChancelItem: { action: "Cancel clicked" },
+    onEditItem: { action: "Edit clicked" },
+    onManuallyShareItem: { action: "Manually Share Now" },
+  },
 };
 
 export const PostTableItems = Template.bind({});
