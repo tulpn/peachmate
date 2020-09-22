@@ -47,7 +47,7 @@ export default function Save(props) {
     let nP = new Post(postData)
 
     dispatch(postSaveActions.savePost(nP.toServerJSON()))
-
+    
   };
   return (
     <div className="postCnt">

@@ -218,6 +218,162 @@ exports[`Storyshots Components/Button White Button 1`] = `
 </button>
 `;
 
+exports[`Storyshots Components/NotificationMessage Danger Light Notification 1`] = `
+<div
+  className="notification is-danger is-light"
+>
+  <button
+    className="delete"
+  />
+  <p>
+    Ex laborum ex elit occaecat eiusmod nulla amet aute sit laborum. Eu in adipisicing voluptate do minim ex ullamco. Id irure Lorem aliquip veniam ullamco laboris Lorem non ipsum ad veniam. Adipisicing dolore pariatur quis est minim est.
+  </p>
+</div>
+`;
+
+exports[`Storyshots Components/NotificationMessage Danger Notification 1`] = `
+<div
+  className="notification is-danger"
+>
+  <button
+    className="delete"
+  />
+  <p>
+    Ex laborum ex elit occaecat eiusmod nulla amet aute sit laborum. Eu in adipisicing voluptate do minim ex ullamco. Id irure Lorem aliquip veniam ullamco laboris Lorem non ipsum ad veniam. Adipisicing dolore pariatur quis est minim est.
+  </p>
+</div>
+`;
+
+exports[`Storyshots Components/NotificationMessage Info Light Notification 1`] = `
+<div
+  className="notification is-info is-light"
+>
+  <button
+    className="delete"
+  />
+  <p>
+    Ex laborum ex elit occaecat eiusmod nulla amet aute sit laborum. Eu in adipisicing voluptate do minim ex ullamco. Id irure Lorem aliquip veniam ullamco laboris Lorem non ipsum ad veniam. Adipisicing dolore pariatur quis est minim est.
+  </p>
+</div>
+`;
+
+exports[`Storyshots Components/NotificationMessage Info Notification 1`] = `
+<div
+  className="notification is-info"
+>
+  <button
+    className="delete"
+  />
+  <p>
+    Ex laborum ex elit occaecat eiusmod nulla amet aute sit laborum. Eu in adipisicing voluptate do minim ex ullamco. Id irure Lorem aliquip veniam ullamco laboris Lorem non ipsum ad veniam. Adipisicing dolore pariatur quis est minim est.
+  </p>
+</div>
+`;
+
+exports[`Storyshots Components/NotificationMessage Link Light Notification 1`] = `
+<div
+  className="notification is-link is-light"
+>
+  <button
+    className="delete"
+  />
+  <p>
+    Ex laborum ex elit occaecat eiusmod nulla amet aute sit laborum. Eu in adipisicing voluptate do minim ex ullamco. Id irure Lorem aliquip veniam ullamco laboris Lorem non ipsum ad veniam. Adipisicing dolore pariatur quis est minim est.
+  </p>
+</div>
+`;
+
+exports[`Storyshots Components/NotificationMessage Link Notification 1`] = `
+<div
+  className="notification is-link"
+>
+  <button
+    className="delete"
+  />
+  <p>
+    Ex laborum ex elit occaecat eiusmod nulla amet aute sit laborum. Eu in adipisicing voluptate do minim ex ullamco. Id irure Lorem aliquip veniam ullamco laboris Lorem non ipsum ad veniam. Adipisicing dolore pariatur quis est minim est.
+  </p>
+</div>
+`;
+
+exports[`Storyshots Components/NotificationMessage Primary Light Notification 1`] = `
+<div
+  className="notification is-primary is-light"
+>
+  <button
+    className="delete"
+  />
+  <p>
+    Ex laborum ex elit occaecat eiusmod nulla amet aute sit laborum. Eu in adipisicing voluptate do minim ex ullamco. Id irure Lorem aliquip veniam ullamco laboris Lorem non ipsum ad veniam. Adipisicing dolore pariatur quis est minim est.
+  </p>
+</div>
+`;
+
+exports[`Storyshots Components/NotificationMessage Primary Notification 1`] = `
+<div
+  className="notification is-primary"
+>
+  <button
+    className="delete"
+  />
+  <p>
+    Ex laborum ex elit occaecat eiusmod nulla amet aute sit laborum. Eu in adipisicing voluptate do minim ex ullamco. Id irure Lorem aliquip veniam ullamco laboris Lorem non ipsum ad veniam. Adipisicing dolore pariatur quis est minim est.
+  </p>
+</div>
+`;
+
+exports[`Storyshots Components/NotificationMessage Success Light Notification 1`] = `
+<div
+  className="notification is-success is-light"
+>
+  <button
+    className="delete"
+  />
+  <p>
+    Ex laborum ex elit occaecat eiusmod nulla amet aute sit laborum. Eu in adipisicing voluptate do minim ex ullamco. Id irure Lorem aliquip veniam ullamco laboris Lorem non ipsum ad veniam. Adipisicing dolore pariatur quis est minim est.
+  </p>
+</div>
+`;
+
+exports[`Storyshots Components/NotificationMessage Success Notification 1`] = `
+<div
+  className="notification is-success"
+>
+  <button
+    className="delete"
+  />
+  <p>
+    Ex laborum ex elit occaecat eiusmod nulla amet aute sit laborum. Eu in adipisicing voluptate do minim ex ullamco. Id irure Lorem aliquip veniam ullamco laboris Lorem non ipsum ad veniam. Adipisicing dolore pariatur quis est minim est.
+  </p>
+</div>
+`;
+
+exports[`Storyshots Components/NotificationMessage Warning Light Notification 1`] = `
+<div
+  className="notification is-warning is-light"
+>
+  <button
+    className="delete"
+  />
+  <p>
+    Ex laborum ex elit occaecat eiusmod nulla amet aute sit laborum. Eu in adipisicing voluptate do minim ex ullamco. Id irure Lorem aliquip veniam ullamco laboris Lorem non ipsum ad veniam. Adipisicing dolore pariatur quis est minim est.
+  </p>
+</div>
+`;
+
+exports[`Storyshots Components/NotificationMessage Warning Notification 1`] = `
+<div
+  className="notification is-warning"
+>
+  <button
+    className="delete"
+  />
+  <p>
+    Ex laborum ex elit occaecat eiusmod nulla amet aute sit laborum. Eu in adipisicing voluptate do minim ex ullamco. Id irure Lorem aliquip veniam ullamco laboris Lorem non ipsum ad veniam. Adipisicing dolore pariatur quis est minim est.
+  </p>
+</div>
+`;
+
 exports[`Storyshots Components/Posts/PostTable Post Table Empty 1`] = `
 <table
   className="table is-striped is-hoverable is-fullwidth is-bordered is-narrow"
