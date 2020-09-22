@@ -16,9 +16,35 @@ import Post from "../../../models/Posts/post";
 export default function Save(props) {
   const dispatch = useDispatch();
 
-  const handleSubmit = (values) => {
+  const loading = useSelector((state) =>
+    state.get("posts").get("save").get("loading")
+  );
 
-    let nP = new Post(values.get("title"), values.get("message"), values.get("when"), values.get("network"))
+  const savePostError = useSelector((state) =>
+    state.get("posts").get("save").get("savePostError")
+  );
+  
+  const savePostSuccess = useSelector((state) =>
+    state.get("posts").get("save").get("savePostSuccess")
+  );
+  
+  const savePostFinished = useSelector((state) =>
+    state.get("posts").get("save").get("savePostFinished")
+  );
+  
+  const error = useSelector((state) =>
+    state.get("posts").get("save").get("error")
+  );
+
+
+  const handleSubmit = (values) => {
+    let postData = {
+      title: values.get("title"),
+      message: values.get("message"),
+      when: values.get("when"),
+      network: values.get("network"),
+    }
+    let nP = new Post(postData)
 
     dispatch(postSaveActions.savePost(nP.toServerJSON()))
 
@@ -36,7 +62,7 @@ export default function Save(props) {
 
       <BreadCrumbs crumbs={props.crumbs} />
 
-      <SavePostForm onSubmit={handleSubmit} />
+      <SavePostForm onSubmit={handleSubmit} loading={loading} savePostError={savePostError} savePostSuccess={savePostSuccess} savePostFinished={savePostFinished} error={error} />
     </div>
   );
 }

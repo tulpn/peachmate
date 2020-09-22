@@ -25,3 +25,14 @@ export default {
           },
       ]
   };
+
+  export const BreadCrumbsOneSteps = Template.bind({});
+  
+  BreadCrumbsOneSteps.args = {
+      crumbs: [
+          {
+              title: "Item 1",
+              path: "/item1", 
+          },
+      ]
+  };

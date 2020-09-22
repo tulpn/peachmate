@@ -10,11 +10,29 @@ import warn from "./warn";
 
 import FieldComponent from "../../Forms/FieldComponent/FieldComponent";
 import FieldDatePicker from "../../Forms/FieldDatePicker/FieldDatePicker";
+import Button from "../../Button/Button";
 
 let SavePostForm = (props) => {
   const { handleSubmit } = props;
   let errorContent = null;
 
+  if (props.savePostFinished === true && props.error !== "" && props.savePostError === true) {
+      let errorMessage = ""
+      switch (props.error) {
+          case "form_error":
+              errorMessage = "Please fill out the message correctly."
+              break
+          default:
+              errorMessage = "Please verify that you have no errors in your form."
+      }
+
+      errorContent = (
+          <div className='formError'>
+              <h3>Ooops. We ran into a few errors.</h3>
+              <p>{errorMessage}</p>
+          </div>
+      )
+  }
   return (
     <form onSubmit={handleSubmit} className="form">
       {errorContent}
@@ -24,6 +42,7 @@ let SavePostForm = (props) => {
         type="text"
         label="Post Title"
         placeholder="Lorem Ipsum dolore sit amore"
+        disabled={props.loading}
         component={FieldComponent}
       />
       <Field
@@ -31,6 +50,8 @@ let SavePostForm = (props) => {
         name="message"
         type="textarea"
         label="Message"
+        required
+        disabled={props.loading}
         placeholder="Lorem Ipsum dolore sit amore"
         component={FieldComponent}
       />
@@ -40,6 +61,7 @@ let SavePostForm = (props) => {
         name="when"
         id="when"
         type="text"
+        disabled={props.loading}
         component={FieldDatePicker}
       />
 
@@ -48,7 +70,8 @@ let SavePostForm = (props) => {
         name="network"
         type="select"
         label="Select Network"
-        placeholder=""
+        required
+        disabled={props.loading}
         component={FieldComponent}
       >
         <option value="linkedin">LinkedIn</option>
@@ -56,13 +79,9 @@ let SavePostForm = (props) => {
 
       <div className="field">
         <div className="control">
-          <button
-            type="submit"
-            className="button is-primary"
-            disabled={props.loading}
-          >
+          <Button isPrimary isLoading={props.loading}>
             Save
-          </button>
+            </Button>          
         </div>
       </div>
     </form>

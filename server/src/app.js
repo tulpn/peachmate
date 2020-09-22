@@ -40,7 +40,7 @@ var corsOptions = {
 app.use(cors(corsOptions));
 
 // Define Routes
-app.use("/",postsRoutes)
+app.use("/posts",postsRoutes)
 
 // set the 404 handling routes directly to the controller methods
 app.use(errorController.get404)
