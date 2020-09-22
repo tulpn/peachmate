@@ -18,7 +18,7 @@ export default class Post {
    * @param {String} status One of "posted", "scheduled", "cancelled", "deleted"
    * @param {String} _id Server Object ID
    */
-  constructor(element) {
+  constructor(element = {}) {
     this.title = element.title || null;
     this.message = element.message || null;
     this.when = element.when || null;

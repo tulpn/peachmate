@@ -42,8 +42,8 @@ function savePostSuccess(immutableState, action) {
         newImmutableState = newImmutableState.set("savePostFinished", true)
     }
     newImmutableState = newImmutableState.set(
-        "posts",
-        fromJS(action.payload.items)
+        "post",
+        fromJS(action.payload.items[0])
     )
     newImmutableState = newImmutableState.set("loading", false)
 

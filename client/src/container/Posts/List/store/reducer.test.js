@@ -1,7 +1,7 @@
 import reducer from "./reducer";
 import { fromJS, Map } from "immutable";
 
-describe("posts reducer", () => {
+describe("posts fetch reducer", () => {
   it("should return the initial state", () => {
     expect(reducer(undefined, {})).toEqual(
       fromJS({
