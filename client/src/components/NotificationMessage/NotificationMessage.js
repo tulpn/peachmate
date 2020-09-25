@@ -43,7 +43,7 @@ NotificationMessage.propTypes = {
     isWarning: PropTypes.bool,
     isDanger: PropTypes.bool,
     isLight: PropTypes.bool,
-    onDelete: PropTypes.func.isRequired
+    onDelete: PropTypes.func
 };
 
 NotificationMessage.defaultProps = {

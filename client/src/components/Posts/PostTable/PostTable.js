@@ -3,8 +3,6 @@ import PropTypes from "prop-types";
 
 import PostTableItem from "../PostTableItem/PostTableItem";
 import SpinningLoader from "../../SpinningLoader/SpinningLoader";
-import Post from "../../../models/Posts/post";
-
 export default function PostTable(props) {
 
   const items = props.items.map((i) => (<PostTableItem
@@ -63,10 +61,10 @@ export default function PostTable(props) {
 PostTable.propTypes = {
   items: PropTypes.array.isRequired,
   loading: PropTypes.bool.isRequired,
-  onDeleteItem: PropTypes.func.isRequired,
-  onChancelItem: PropTypes.func.isRequired,
-  onEditItem: PropTypes.func.isRequired,
-  onManuallyShareItem: PropTypes.func.isRequired,
+  onDeleteItem: PropTypes.func,
+  onChancelItem: PropTypes.func,
+  onEditItem: PropTypes.func,
+  onManuallyShareItem: PropTypes.func,
 };
 
 PostTable.defaultProps = {

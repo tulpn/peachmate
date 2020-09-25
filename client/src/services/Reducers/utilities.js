@@ -1,17 +1,12 @@
 /**
- * Removes Item from List by uuid
+ * Removes Item from List by id
  * @param {List} list
- * @param {string} uuid
+ * @param {string} id
  */
-export function removeItemInList(list, uuid) {
-    let foundIndex = list.findIndex(function (item) {
-        return item.get("uuid") === uuid
+export function removeItemInList(list, id) {
+    return list.filter(item => {
+        return item.get("id") !== id
     })
-    if (foundIndex === -1) {
-        list = list.delete(foundIndex)
-    }
-
-    return list
 }
 
 /**
@@ -22,7 +17,7 @@ export function removeItemInList(list, uuid) {
  */
 export function insertItemInList(list, newItem, position = 0) {
     let foundIndex = list.findIndex(function (item) {
-        return item.get("uuid") === newItem.get("uuid")
+        return item.get("id") === newItem.get("id")
     })
     if (foundIndex === -1) {
         list = list.insert(position, newItem)
@@ -34,12 +29,12 @@ export function insertItemInList(list, newItem, position = 0) {
 /**
  * Updates item in Immutable.js List
  * @param {List} list
- * @param {string} uuid
+ * @param {string} id
  * @param {Function} callback
  */
-export function updateItemInList(list, uuid, callback) {
+export function updateItemInList(list, id, callback) {
     let index = list.findIndex(function (item) {
-        return item.get("uuid") === uuid
+        return item.get("id") === id
     })
     if (index === -1) {
         return list
@@ -53,9 +48,9 @@ export function updateObject(oldObject, newValues) {
     return Object.assign({}, oldObject, newValues)
 }
 
-export function updateItemInArray(array, uuid, updateItemCallback) {
+export function updateItemInArray(array, id, updateItemCallback) {
     const updatedItems = array.map((item) => {
-        if (item.uuid !== uuid) {
+        if (item.id !== id) {
             // Since we only want to update one item, preserve all others as they are now
             return item
         }
@@ -68,10 +63,10 @@ export function updateItemInArray(array, uuid, updateItemCallback) {
     return updatedItems
 }
 
-export function removeItemInArray(array, uuid) {
+export function removeItemInArray(array, id) {
     // eslint-disable-next-line no-console
     const updatedItems = array.filter((item) => {
-        if (item.uuid !== uuid) {
+        if (item.id !== id) {
             // Since we only want to update one item, preserve all others as they are now
             return item
         }

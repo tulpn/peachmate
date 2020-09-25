@@ -111,8 +111,8 @@ PostTableItem.propTypes = {
   network: PropTypes.string.isRequired,
   message: PropTypes.string,
   status: PropTypes.oneOf(["scheduled", "posted", "cancelled", "draft"]),
-  onDelete: PropTypes.func.isRequired,
-  onCancel: PropTypes.func.isRequired,
-  onEdit: PropTypes.func.isRequired,
-  onManuallyShare: PropTypes.func.isRequired,
+  onDelete: PropTypes.func,
+  onCancel: PropTypes.func,
+  onEdit: PropTypes.func,
+  onManuallyShare: PropTypes.func,
 };

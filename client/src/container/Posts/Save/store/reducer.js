@@ -1,17 +1,14 @@
 import { fromJS, Map } from "immutable"
 import Post from "../../../../models/Posts/post"
 
-import {CONNECTION_ERROR} from "../../../../services/Api/Errors"
+import {CONNECTION_ERROR, API_ERROR} from "../../../../services/Api/Errors"
 
 import { createReducer } from "../../../../services/Reducers/utilities"
 
 let initialState = fromJS({
     post: null,
     loading: false,
-    savePostError: null,
-    savePostSuccess: null,
-    savePostFinished: null,
-    error: ""
+    error: null
 })
 
 /**
@@ -30,16 +27,11 @@ function startAction(immutableState, action) {
 function savePostSuccess(immutableState, action) {
     let newImmutableState = immutableState
     if (action.payload.status != 0) {
-        newImmutableState = newImmutableState.set(
-            "savePostError",
-            true
-        )
-        newImmutableState = newImmutableState.set("savePostSuccess", false)
-        newImmutableState = newImmutableState.set("savePostFinished", true)
+        newImmutableState = newImmutableState.set("error", fromJS({
+            status: API_ERROR
+        }))
     } else {
-        newImmutableState = newImmutableState.set("savePostError", false)
-        newImmutableState = newImmutableState.set("savePostSuccess", true)
-        newImmutableState = newImmutableState.set("savePostFinished", true)
+        newImmutableState = newImmutableState.set("error", null)
     }
     newImmutableState = newImmutableState.set(
         "post",
@@ -53,10 +45,9 @@ function savePostSuccess(immutableState, action) {
 function savePostFail(immutableState, action) {
     let newImmutableState = immutableState
     newImmutableState = newImmutableState.set("loading", false)
-    newImmutableState = newImmutableState.set("error", CONNECTION_ERROR)
-    newImmutableState = newImmutableState.set("savePostError", true)
-    newImmutableState = newImmutableState.set("savePostSuccess", false)
-    newImmutableState = newImmutableState.set("savePostFinished", true)
+    newImmutableState = newImmutableState.set("error", fromJS({
+        status: CONNECTION_ERROR
+    }))
     return newImmutableState
 }
 

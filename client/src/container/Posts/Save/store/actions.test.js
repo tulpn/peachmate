@@ -10,7 +10,7 @@ import * as actions from "./actions";
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 
-import Post from "../../../../models/Posts/post"
+import Post from "../../../../models/Posts/post";
 
 var mock = new MockAdapter(axios);
 
@@ -19,11 +19,12 @@ describe("posts actions", () => {
     const payload = {
       status: 0,
       items: [
-          {
-              title: null,
-              message: "Lorem Ipsum",
-              network: "linkedin"
-          }
+        {
+          title: null,
+          message: "Lorem Ipsum",
+          network: "linkedin",
+          when: "2020-09-24T10:22:29.972Z",
+        },
       ],
     };
 
@@ -61,34 +62,32 @@ describe("posts actions", () => {
 });
 
 describe("async post actions", () => {
-    // we don't want to do this, as it will act as pass-through
-//   afterEach(() => {
-//     mock.restore();
-//   });
+  // we don't want to do this, as it will act as pass-through
+  //   afterEach(() => {
+  //     mock.restore();
+  //   });
 
   it("after it CREATES a new post", () => {
+    let mockPostData = {
+      message: "Test Message",
+      network: "linkedin",
+      when: "2020-09-24T10:22:29.972Z",
+    };
 
-    let mockPost = {
-        title: null, 
-        message: "Test Message",
-        network: "linkedin"
-    }
-
-    let nP = new Post(mockPost)
-
+    let nP = new Post(mockPostData);
 
     mock.onPost("http://localhost:8888/posts/post").reply(function (config) {
-        // `config` is the axios config and contains things like the url
-      
-        // return an array in the form of [status, data, headers]
-        return [
-          200,
-          {
-            status: 0,
-            items: [{ ...mockPost, _id: "this is an idea" }],
-          },
-        ];
-      })
+      // `config` is the axios config and contains things like the url
+
+      // return an array in the form of [status, data, headers]
+      return [
+        200,
+        {
+          status: 0,
+          items: [{ ...mockPostData, _id: "abcedf" }],
+        },
+      ];
+    });
 
     const expectedActions = [
       {
@@ -96,7 +95,7 @@ describe("async post actions", () => {
       },
       {
         type: "SAVE_POST_SUCCESS",
-        payload: { status: 0, items: [{ ...mockPost, _id: "this is an idea" }] },
+        payload: { status: 0, items: [{ ...mockPostData, _id: "abcedf" }] },
       },
     ];
 
@@ -110,15 +109,15 @@ describe("async post actions", () => {
 
   it("creates savePost after network error", () => {
     let mockPost = {
-        title: null, 
-        message: "Test Message",
-        network: "linkedin"
-    }
+      title: null,
+      message: "Test Message",
+      network: "linkedin",
+      when: "2020-09-24T10:22:29.972Z",
+    };
 
-    let nP = new Post(mockPost)
+    let nP = new Post(mockPost);
 
-
-    mock.onPost("http://localhost:8888/posts/post").networkError()
+    mock.onPost("http://localhost:8888/posts/post").networkError();
 
     const expectedActions = [
       {
@@ -139,15 +138,15 @@ describe("async post actions", () => {
 
   it("creates savePost after timeout", () => {
     let mockPost = {
-        title: null, 
-        message: "Test Message",
-        network: "linkedin"
-    }
+      title: null,
+      message: "Test Message",
+      network: "linkedin",
+      when: "2020-09-24T10:22:29.972Z",
+    };
 
-    let nP = new Post(mockPost)
+    let nP = new Post(mockPost);
 
-
-    mock.onPost("http://localhost:8888/posts/post").timeout()
+    mock.onPost("http://localhost:8888/posts/post").timeout();
 
     const expectedActions = [
       {
@@ -167,29 +166,30 @@ describe("async post actions", () => {
   });
 
   it("creates a PUT request because we have an id", () => {
-
     let mockPost = {
-        _id: "abcdef123",
-        title: null, 
-        message: "Test Message",
-        network: "linkedin"
-    }
+      _id: "abcdef123",
+      title: null,
+      message: "Test Message",
+      network: "linkedin",
+      when: "2020-09-24T10:22:29.972Z",
+    };
 
-    let nP = new Post(mockPost)
+    let nP = new Post(mockPost);
 
-
-    mock.onPut(`http://localhost:8888/posts/post/${mockPost._id}`).reply(function (config) {
+    mock
+      .onPut(`http://localhost:8888/posts/post/${mockPost._id}`)
+      .reply(function (config) {
         // `config` is the axios config and contains things like the url
-      
+
         // return an array in the form of [status, data, headers]
         return [
           200,
           {
             status: 0,
-            items: [{ ...mockPost}],
+            items: [{ ...mockPost }],
           },
         ];
-      })
+      });
 
     const expectedActions = [
       {
@@ -197,7 +197,7 @@ describe("async post actions", () => {
       },
       {
         type: "SAVE_POST_SUCCESS",
-        payload: { status: 0, items: [{ ...mockPost}] },
+        payload: { status: 0, items: [{ ...mockPost }] },
       },
     ];
 

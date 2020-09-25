@@ -5,6 +5,9 @@ import "./Save.scss";
 
 import { useSelector, useDispatch } from "react-redux";
 
+
+import formatISO from 'date-fns/formatISO'
+
 import Level from "../../../components/Level/Level";
 import Button from "../../../components/Button/Button";
 import BreadCrumbs from "../../../components/BreadCrumbs/BreadCrumbs";
@@ -19,20 +22,12 @@ export default function Save(props) {
   
   const [notifcationMessage, setNotifcationMessage] = useState(null)
 
-  const loading = useSelector((state) =>
-    state.get("posts").get("save").get("loading")
+  const currentPost = useSelector((state) =>
+    state.get("posts").get("save").get("post")
   );
 
-  const savePostError = useSelector((state) =>
-    state.get("posts").get("save").get("savePostError")
-  );
-  
-  const savePostSuccess = useSelector((state) =>
-    state.get("posts").get("save").get("savePostSuccess")
-  );
-  
-  const savePostFinished = useSelector((state) =>
-    state.get("posts").get("save").get("savePostFinished")
+  const loading = useSelector((state) =>
+    state.get("posts").get("save").get("loading")
   );
   
   const error = useSelector((state) =>
@@ -42,13 +37,14 @@ export default function Save(props) {
 
   const handleSubmit = (values) => {
     let postData = {
-      title: values.get("title"),
       message: values.get("message"),
-      when: values.get("when"),
+      when: formatISO(values.get("when")),
       network: values.get("network"),
     }
+    console.log("postData", postData)
     let nP = new Post(postData)
 
+    console.log(nP)
     dispatch(postSaveActions.savePost(nP.toServerJSON()))
   };
 
@@ -58,13 +54,13 @@ export default function Save(props) {
 
   const initNotificationMessage = () => {
     let newNotifcationMessage = null
-    if (loading === false &&  savePostError === false && savePostFinished === true && savePostSuccess === true){
+    if (loading === false &&  ( error === undefined || error === null ) && currentPost !== null){
       newNotifcationMessage = <NotificationMessage isSuccess onDelete={notifcationDeleteHandler}>
         <p>
           Post successfully saved.
         </p>
       </NotificationMessage>
-    } else if (loading === false &&  savePostError === true && savePostFinished === true && savePostSuccess === false ) {
+    } else if (loading === false &&  error !== null && error !== undefined ) {
       newNotifcationMessage = <NotificationMessage isDanger onDelete={notifcationDeleteHandler}>
         <p>
           Post could not be saved. Please check for additional messages.
@@ -76,7 +72,7 @@ export default function Save(props) {
 
   useEffect(() => {
     initNotificationMessage()
-  }, [savePostError, savePostFinished, savePostSuccess])
+  }, [error])
 
 
  
@@ -93,7 +89,7 @@ export default function Save(props) {
 
       <BreadCrumbs crumbs={props.crumbs} />
       {notifcationMessage}
-      <SavePostForm onSubmit={handleSubmit} loading={loading} savePostError={savePostError} savePostSuccess={savePostSuccess} savePostFinished={savePostFinished} error={error} />
+      <SavePostForm onSubmit={handleSubmit} loading={loading} error={error} />
     </div>
   );
 }

@@ -28,6 +28,8 @@ $menu-item-active-background-color: $purple;
 // custom own
 html,
 body {
+  display: flex;
+  flex-direction: column;
   height: 100%;
   min-height: 100%;
 }
@@ -38,20 +40,19 @@ body {
 }
 
 #root {
-  height: 100%;
-  min-height: 100%;
-}
-
-.lightTheme,
-.darkTheme {
-  height: 100%;
-  min-height: 100%;
+  display: flex;
+  flex: auto;
 }
 
 .appCnt {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex: auto;
+}
+
+.lightTheme,
+.darkTheme {
+  display: flex;
+  flex: auto;
 }
 
 @import "./mixins.scss";

@@ -716,9 +716,9 @@ exports[`Storyshots Components/Posts/PostTable Post Table Items 1`] = `
       </td>
       <td>
         <span
-          className="tag is-info"
+          className="tag is-light"
         >
-          Scheduled
+          Draft
         </span>
       </td>
       <td>
@@ -729,13 +729,13 @@ exports[`Storyshots Components/Posts/PostTable Post Table Items 1`] = `
             className="button  is-danger"
             disabled={false}
             onClick={[Function]}
-            title="Cancel Post"
+            title="Delete Post"
           >
             <span
               className="icon is-small"
             >
               <i
-                className="fas fa-power-off"
+                className="fas fa-trash-alt"
               />
             </span>
           </button>

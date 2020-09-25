@@ -16,9 +16,9 @@ let SavePostForm = (props) => {
   const { handleSubmit } = props;
   let errorContent = null;
 
-  if (props.savePostFinished === true && props.error !== "" && props.savePostError === true) {
+  if (props.error !== null && props.error !== undefined) {
       let errorMessage = ""
-      switch (props.error) {
+      switch (props.error.get("status")) {
           case "form_error":
               errorMessage = "Please fill out the message correctly."
               break
@@ -36,15 +36,7 @@ let SavePostForm = (props) => {
   return (
     <form onSubmit={handleSubmit} className="form">
       {errorContent}
-      <Field
-        id="title"
-        name="title"
-        type="text"
-        label="Post Title"
-        placeholder="Lorem Ipsum dolore sit amore"
-        disabled={props.loading}
-        component={FieldComponent}
-      />
+      
       <Field
         id="message"
         name="message"
@@ -57,10 +49,10 @@ let SavePostForm = (props) => {
       />
 
       <Field
-        label="When would you like to publish"
-        name="when"
         id="when"
+        name="when"
         type="text"
+        label="When would you like to publish"        
         disabled={props.loading}
         component={FieldDatePicker}
       />
@@ -82,6 +74,9 @@ let SavePostForm = (props) => {
           <Button isPrimary isLoading={props.loading}>
             Save
             </Button>          
+            <Button isWhite isLoading={props.loading}>
+            Publish now
+            </Button>    
         </div>
       </div>
     </form>

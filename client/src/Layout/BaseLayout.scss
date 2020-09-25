@@ -1,11 +1,17 @@
 @import "../theme/colours.scss";
 
+.darkTheme .sidebarCnt {
+  border-right: 1px solid $darkGray;
+}
+
 .sidebarCnt {
+  display: flex;
   width: 20%;
   border-right: 1px solid $gray;
 }
 
 .contentCnt {
-  width: 80%;
+  flex: auto;
   padding-top: 20px;
+  padding-bottom: 20px;
 }

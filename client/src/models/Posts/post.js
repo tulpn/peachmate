@@ -21,7 +21,7 @@ export default class Post {
    */
   constructor(element = {}) {
     this.message = element.message || null;
-    this.when = element.when || null;
+    this.when =element.when === null ? null : parseISO(element.when);
     this.network = element.network || null;
     this.status = element.status || null;
     this.id = element._id || null;
@@ -50,7 +50,7 @@ export default class Post {
     return {
       _id: this.id || null,
       message: this.message || null,
-      when: formatISO(this.when) || null,
+      when: this.when === null ? null : formatISO(this.when),
       network: this.network || null,
       status: this.status || null,
     };

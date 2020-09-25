@@ -1,5 +1,6 @@
 import reducer from "./reducer";
 import { fromJS, Map } from "immutable";
+import { CONNECTION_ERROR } from "../../../../services/Api/Errors";
 
 describe("post save reducer", () => {
   it("should return the initial state", () => {
@@ -7,10 +8,7 @@ describe("post save reducer", () => {
       fromJS({
         post: null,
         loading: false,
-        savePostError: null,
-        savePostSuccess: null,
-        savePostFinished: null,
-        error: ""
+        error: null
       })
     );
   });
@@ -24,10 +22,7 @@ describe("post save reducer", () => {
       fromJS({
         post: null,
         loading: true,
-        savePostError: null,
-        savePostSuccess: null,
-        savePostFinished: null,
-        error: "",
+        error: null
       })
     );
   });
@@ -42,10 +37,7 @@ describe("post save reducer", () => {
       fromJS({
         post: { message: "Lorem Ipsum" },
         loading: false,
-        savePostError: false,
-        savePostSuccess: true,
-        savePostFinished: true,
-        error: ""
+        error: null
       })
     );
   });
@@ -59,10 +51,9 @@ describe("post save reducer", () => {
       fromJS({
         post: null,
         loading: false,
-        savePostError: true,
-        savePostSuccess: false,
-        savePostFinished: true,
-        error: "connection_error",
+        error: {
+          status: CONNECTION_ERROR
+        }
       })
     );
   });

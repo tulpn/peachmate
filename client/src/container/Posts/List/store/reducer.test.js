@@ -1,5 +1,6 @@
 import reducer from "./reducer";
 import { fromJS, Map } from "immutable";
+import { CONNECTION_ERROR } from "../../../../services/Api/Errors";
 
 describe("posts fetch reducer", () => {
   it("should return the initial state", () => {
@@ -7,10 +8,7 @@ describe("posts fetch reducer", () => {
       fromJS({
         posts: [],
         loading: false,
-        fetchAllError: null,
-        fetchAllSuccess: null,
-        fetchAllFinished: null,
-        error: "",
+        error: null
       })
     );
   });
@@ -24,10 +22,7 @@ describe("posts fetch reducer", () => {
       fromJS({
         posts: [],
         loading: true,
-        fetchAllError: null,
-        fetchAllSuccess: null,
-        fetchAllFinished: null,
-        error: "",
+        error: null
       })
     );
   });
@@ -42,10 +37,7 @@ describe("posts fetch reducer", () => {
       fromJS({
         posts: [{ message: "Lorem Ipsum" }],
         loading: false,
-        fetchAllError: false,
-        fetchAllSuccess: true,
-        fetchAllFinished: true,
-        error: "",
+        error: null
       })
     );
   });
@@ -59,10 +51,9 @@ describe("posts fetch reducer", () => {
       fromJS({
         posts: [],
         loading: false,
-        fetchAllError: true,
-        fetchAllSuccess: false,
-        fetchAllFinished: true,
-        error: "connection_error",
+        error: {
+          status: CONNECTION_ERROR
+        }
       })
     );
   });

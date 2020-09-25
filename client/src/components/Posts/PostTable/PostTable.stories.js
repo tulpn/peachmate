@@ -4,6 +4,12 @@ import PostTable from "./PostTable";
 export default {
   title: "Components/Posts/PostTable",
   component: PostTable,
+  argTypes: {
+    onDeleteItem: { action: "Delete clicked" },
+    onChancelItem: { action: "Cancel clicked" },
+    onEditItem: { action: "Edit clicked" },
+    onManuallyShareItem: { action: "Manually Share Now" },
+  },
 };
 
 const Template = (args) => <PostTable {...args} />;
@@ -51,10 +57,16 @@ PostTableItems.args = {
       _id: "3216531232",
       message: "Adipisicing aliquip est commodo officia anim.",
       when: new Date(2021, 12, 11, 3, 11, 10),
-      status: "deleted",
+      status: "draft",
       network: "linkedin",
     },
   ],
+  argTypes: {
+    onDeleteItem: { action: "Delete clicked" },
+    onChancelItem: { action: "Cancel clicked" },
+    onEditItem: { action: "Edit clicked" },
+    onManuallyShareItem: { action: "Manually Share Now" },
+  },
 };
 
 export const PostTableLoading = Template.bind({});
@@ -62,4 +74,10 @@ export const PostTableLoading = Template.bind({});
 PostTableLoading.args = {
   items: [],
   loading: true,
+  argTypes: {
+    onDeleteItem: { action: "Delete clicked" },
+    onChancelItem: { action: "Cancel clicked" },
+    onEditItem: { action: "Edit clicked" },
+    onManuallyShareItem: { action: "Manually Share Now" },
+  },
 };
