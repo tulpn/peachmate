@@ -10,11 +10,7 @@ var formatISO = require('date-fns/formatISO')
 const postSchema = new Schema({
     message: Schema.Types.String,
     when: Schema.Types.Date,
-    network: {
-        type: String, 
-        enum: ['linkedin', 'twitter'],
-        default: 'linkedin'
-    },
+    networks: [String],
     status: {
         type: String, 
         enum: ['cancelled', 'posted', 'scheduled', 'draft'],
@@ -61,7 +57,7 @@ class PostClass {
             _id: this._id,
             message: this.message, 
             when: this.when,
-            network: this.network, 
+            networks: this.networks, 
             status: this.status, 
             postedOn: this.postedOn,
             canDelete: this.canDelete()

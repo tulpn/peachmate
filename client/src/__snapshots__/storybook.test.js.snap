@@ -439,15 +439,7 @@ exports[`Storyshots Components/Posts/PostTable Post Table Items 1`] = `
   </thead>
   <tbody>
     <tr>
-      <td>
-        <span
-          className="icon "
-        >
-          <i
-            className="fab fa-linkedin-in"
-          />
-        </span>
-      </td>
+      <td />
       <td>
         <p
           className="is-ellipsed"
@@ -522,15 +514,7 @@ exports[`Storyshots Components/Posts/PostTable Post Table Items 1`] = `
       </td>
     </tr>
     <tr>
-      <td>
-        <span
-          className="icon "
-        >
-          <i
-            className="fab fa-linkedin-in"
-          />
-        </span>
-      </td>
+      <td />
       <td>
         <p
           className="is-ellipsed"
@@ -610,7 +594,7 @@ exports[`Storyshots Components/Posts/PostTable Post Table Items 1`] = `
           className="icon "
         >
           <i
-            className="fab fa-linkedin-in"
+            className="fab fa-twitter"
           />
         </span>
       </td>
@@ -688,15 +672,7 @@ exports[`Storyshots Components/Posts/PostTable Post Table Items 1`] = `
       </td>
     </tr>
     <tr>
-      <td>
-        <span
-          className="icon "
-        >
-          <i
-            className="fab fa-linkedin-in"
-          />
-        </span>
-      </td>
+      <td />
       <td>
         <p
           className="is-ellipsed"
@@ -831,15 +807,7 @@ exports[`Storyshots Components/Posts/PostTableItem Post Table Item Cancelled 1`]
 >
   <tbody>
     <tr>
-      <td>
-        <span
-          className="icon "
-        >
-          <i
-            className="fab fa-linkedin-in"
-          />
-        </span>
-      </td>
+      <td />
       <td>
         <p
           className="is-ellipsed"
@@ -925,7 +893,7 @@ exports[`Storyshots Components/Posts/PostTableItem Post Table Item Draft 1`] = `
           className="icon "
         >
           <i
-            className="fab fa-linkedin-in"
+            className="fab fa-twitter"
           />
         </span>
       </td>
@@ -1009,15 +977,7 @@ exports[`Storyshots Components/Posts/PostTableItem Post Table Item Posted 1`] = 
 >
   <tbody>
     <tr>
-      <td>
-        <span
-          className="icon "
-        >
-          <i
-            className="fab fa-linkedin-in"
-          />
-        </span>
-      </td>
+      <td />
       <td>
         <p
           className="is-ellipsed"
@@ -1098,15 +1058,7 @@ exports[`Storyshots Components/Posts/PostTableItem Post Table Item Scheduled 1`]
 >
   <tbody>
     <tr>
-      <td>
-        <span
-          className="icon "
-        >
-          <i
-            className="fab fa-linkedin-in"
-          />
-        </span>
-      </td>
+      <td />
       <td>
         <p
           className="is-ellipsed"

@@ -45,13 +45,19 @@ export default function PostTableItem(props) {
   return (
     <tr key={props.id}>
       <td>
-        {props.network === "linkedin" ? (
-          <span className="icon ">
-            <i className="fab fa-linkedin-in"></i>
-          </span>
-        ) : (
-          <span>U</span>
-        )}
+        {props.networks.map(i => {
+          if ( i === "linkedIn"){
+            return (
+            <span className="icon " key={i}>
+              <i className="fab fa-linkedin-in"></i>
+          </span>)
+          } else if (i === "twitter"){
+            return (
+            <span className="icon " key={i}>
+              <i className="fab fa-twitter"></i>
+          </span>)
+          }
+        }) }
       </td>
       <td>
         <p className="is-ellipsed">{props.message}</p>
@@ -108,7 +114,7 @@ export default function PostTableItem(props) {
 }
 
 PostTableItem.propTypes = {
-  network: PropTypes.string.isRequired,
+  networks: PropTypes.array,
   message: PropTypes.string,
   status: PropTypes.oneOf(["scheduled", "posted", "cancelled", "draft"]),
   onDelete: PropTypes.func,

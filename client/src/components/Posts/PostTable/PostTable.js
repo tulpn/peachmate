@@ -7,7 +7,7 @@ export default function PostTable(props) {
 
   const items = props.items.map((i) => (<PostTableItem
     key={i.id}
-    network={i.network}
+    networks={i.networks}
     message={i.message}
     status={i.status}
     when={i.when}
