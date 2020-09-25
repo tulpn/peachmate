@@ -36,10 +36,19 @@ export default function Save(props) {
 
 
   const handleSubmit = (values) => {
+    
+    const chosenWhen = values.get("when") || null
+
+    let networks = [
+      values.get("networkLinkedIn") && "linkedIn",
+      values.get("networkTwitter")  && "twitter"
+    ].filter(i => (i !== undefined && i !== null))
+
+    console.log("Networks", networks)
     let postData = {
       message: values.get("message"),
-      when: formatISO(values.get("when")),
-      network: values.get("network"),
+      when: chosenWhen,
+      networks: networks,
     }
     console.log("postData", postData)
     let nP = new Post(postData)

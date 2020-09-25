@@ -57,17 +57,28 @@ let SavePostForm = (props) => {
         component={FieldDatePicker}
       />
 
+      <div className="networkGroup">
+        <label>Select Network</label>
+        <Field
+          id="networkLinkedIn"
+          name="networkLinkedIn"
+          type="checkbox"
+          label="LinkedIn"
+          required
+          disabled={props.loading}
+          component={FieldComponent}
+      />
       <Field
-        id="network"
-        name="network"
-        type="select"
-        label="Select Network"
+        id="networkTwitter"
+        name="networkTwitter"
+        type="checkbox"
+        label="Twitter"
         required
         disabled={props.loading}
         component={FieldComponent}
-      >
-        <option value="linkedin">LinkedIn</option>
-      </Field>
+     />
+
+      </div>
 
       <div className="field">
         <div className="control">
@@ -100,7 +111,6 @@ SavePostForm = reduxForm({
 SavePostForm = connect(
     (state) => ({
         initialValues: {
-            network: "linkedin",
         },
     }),
     {

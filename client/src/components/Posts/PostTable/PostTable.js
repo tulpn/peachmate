@@ -36,7 +36,7 @@ export default function PostTable(props) {
     content = (
       <tr key="nodata">
         <td rowSpan="1" colSpan="5">
-          <p className="has-text-centered">No data to show.</p>
+          <span className="has-text-centered">No data to show.</span>
         </td>
       </tr>
     );

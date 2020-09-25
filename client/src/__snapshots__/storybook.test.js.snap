@@ -403,11 +403,11 @@ exports[`Storyshots Components/Posts/PostTable Post Table Empty 1`] = `
         colSpan="5"
         rowSpan="1"
       >
-        <p
+        <span
           className="has-text-centered"
         >
           No data to show.
-        </p>
+        </span>
       </td>
     </tr>
   </tbody>
@@ -457,12 +457,12 @@ exports[`Storyshots Components/Posts/PostTable Post Table Items 1`] = `
       </td>
       <td>
         <p>
-          <p>
+          <span>
             03 Mar 2020
-          </p>
-          <p>
+          </span>
+          <span>
             13:11:17
-          </p>
+          </span>
         </p>
       </td>
       <td>
@@ -540,12 +540,12 @@ exports[`Storyshots Components/Posts/PostTable Post Table Items 1`] = `
       </td>
       <td>
         <p>
-          <p>
+          <span>
             17 Dec 2021
-          </p>
-          <p>
+          </span>
+          <span>
             05:12:30
-          </p>
+          </span>
         </p>
       </td>
       <td>
@@ -623,12 +623,12 @@ exports[`Storyshots Components/Posts/PostTable Post Table Items 1`] = `
       </td>
       <td>
         <p>
-          <p>
+          <span>
             13 Jun 2021
-          </p>
-          <p>
+          </span>
+          <span>
             01:10:08
-          </p>
+          </span>
         </p>
       </td>
       <td>
@@ -706,12 +706,12 @@ exports[`Storyshots Components/Posts/PostTable Post Table Items 1`] = `
       </td>
       <td>
         <p>
-          <p>
+          <span>
             11 Jan 2022
-          </p>
-          <p>
+          </span>
+          <span>
             03:11:10
-          </p>
+          </span>
         </p>
       </td>
       <td>
@@ -849,12 +849,12 @@ exports[`Storyshots Components/Posts/PostTableItem Post Table Item Cancelled 1`]
       </td>
       <td>
         <p>
-          <p>
+          <span>
             09 Nov 2020
-          </p>
-          <p>
+          </span>
+          <span>
             13:11:17
-          </p>
+          </span>
         </p>
       </td>
       <td>
@@ -938,12 +938,12 @@ exports[`Storyshots Components/Posts/PostTableItem Post Table Item Draft 1`] = `
       </td>
       <td>
         <p>
-          <p>
+          <span>
             09 Nov 2020
-          </p>
-          <p>
+          </span>
+          <span>
             13:11:17
-          </p>
+          </span>
         </p>
       </td>
       <td>
@@ -1027,12 +1027,12 @@ exports[`Storyshots Components/Posts/PostTableItem Post Table Item Posted 1`] = 
       </td>
       <td>
         <p>
-          <p>
+          <span>
             03 Mar 2020
-          </p>
-          <p>
+          </span>
+          <span>
             13:11:17
-          </p>
+          </span>
         </p>
       </td>
       <td>
@@ -1116,12 +1116,12 @@ exports[`Storyshots Components/Posts/PostTableItem Post Table Item Scheduled 1`]
       </td>
       <td>
         <p>
-          <p>
+          <span>
             03 Mar 2020
-          </p>
-          <p>
+          </span>
+          <span>
             13:11:17
-          </p>
+          </span>
         </p>
       </td>
       <td>

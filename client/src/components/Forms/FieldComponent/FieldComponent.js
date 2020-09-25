@@ -51,16 +51,15 @@ export default function FieldComponent(props) {
     classType = "button";
   }
 
-    if (error !== undefined && error !== null && touched ){
-        classType += ' is-danger'
-    }
+  if (error !== undefined && error !== null && touched) {
+    classType += " is-danger";
+  }
 
   if (type === "select") {
-      
-    let selectClasses = 'select'
+    let selectClasses = "select";
 
-    if (error !== undefined && error !== null && touched ){
-        selectClasses += ' is-danger'
+    if (error !== undefined && error !== null && touched) {
+      selectClasses += " is-danger";
     }
     return (
       <div className="field">
@@ -87,13 +86,29 @@ export default function FieldComponent(props) {
     );
   }
 
+  if (type === "checkbox") {
+
+    return (
+      <div className="field">
+        <div className="control">
+          <label className={`${classType}`}>
+            <input {...input} type="checkbox" />
+            {label}
+          </label>
+        </div>
+
+        {touched &&
+          ((error && <p className="help is-danger">{error}</p>) ||
+            (warning && <p className="help is-warning">{warning}</p>))}
+      </div>
+    );
+  }
+
   if (type === "textarea") {
+    let textAreaClasses = "textarea";
 
-
-    let textAreaClasses = 'textarea'
-
-    if (error !== undefined && error !== null && touched ){
-        textAreaClasses += ' is-danger'
+    if (error !== undefined && error !== null && touched) {
+      textAreaClasses += " is-danger";
     }
 
     return (
@@ -126,7 +141,7 @@ export default function FieldComponent(props) {
       </div>
       {touched &&
         ((error && <p className="help is-danger">{error}</p>) ||
-        (warning && <p className="help is-warning">{warning}</p>))}
+          (warning && <p className="help is-warning">{warning}</p>))}
     </div>
   );
 }

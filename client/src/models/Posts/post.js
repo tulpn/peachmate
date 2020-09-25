@@ -22,7 +22,7 @@ export default class Post {
   constructor(element = {}) {
     this.message = element.message || null;
     this.when =element.when === null ? null : parseISO(element.when);
-    this.network = element.network || null;
+    this.networks = element.networks || null;
     this.status = element.status || null;
     this.id = element._id || null;
   }
@@ -42,7 +42,7 @@ export default class Post {
     }
     
     
-    this.network = data.network || null;
+    this.networks = data.networks || null;
     this.status = data.status || null;
   }
 
@@ -51,7 +51,7 @@ export default class Post {
       _id: this.id || null,
       message: this.message || null,
       when: this.when === null ? null : formatISO(this.when),
-      network: this.network || null,
+      networks: this.networks || null,
       status: this.status || null,
     };
   }

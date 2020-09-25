@@ -34,8 +34,8 @@ export default function PostTableItem(props) {
   if (props.when !== undefined && props.when !== null) {
     dateTimeInfo = (
       <p>
-        <p>{format(props.when, "dd MMM yyyy")}</p>
-        <p>{format(props.when, "HH:mm:ss")}</p>
+        <span>{format(props.when, "dd MMM yyyy")}</span>
+        <span>{format(props.when, "HH:mm:ss")}</span>
       </p>
     );
   } else {

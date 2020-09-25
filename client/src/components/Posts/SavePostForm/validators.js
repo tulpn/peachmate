@@ -1,5 +1,4 @@
-import { parse, parseISO, subMinutes } from "date-fns"
-import { formatISO } from "date-fns/esm"
+import { formatISO } from "date-fns"
 import validate from "validate.js"
 
 /**
@@ -31,8 +30,9 @@ const validator = (values) => {
                 message: "Date and Time need to be in the future."
             }
         },
-        network: {
-            presence: true,
+        networkLinkedIn: {
+        },
+        networkTwitter: {
         },
         
     }
@@ -42,7 +42,8 @@ const validator = (values) => {
         {
             message: values.get("message"),
             when: values.get("when"),
-            network: values.get("network"),
+            networkLinkedIn: values.get("networkLinkedIn"),
+            networkTwitter: values.get("networkTwitter"),
         },
         constraints
     )
@@ -53,8 +54,11 @@ const validator = (values) => {
         if (errorsArray["when"] !== undefined) {
             errors.when = errorsArray["when"][0]
         }
-        if (errorsArray["network"] !== undefined) {
-            errors.network = errorsArray["network"][0]
+        if (errorsArray["networkLinkedIn"] !== undefined) {
+            errors.networkLinkedIn = errorsArray["networkLinkedIn"][0]
+        }
+        if (errorsArray["networkTwitter"] !== undefined) {
+            errors.networkTwitter = errorsArray["networkTwitter"][0]
         }
     }
 
