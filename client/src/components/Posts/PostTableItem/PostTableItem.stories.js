@@ -27,7 +27,7 @@ const Template = (args) => <PostTableItem {...args} />;
 export const PostTableItemPosted = Template.bind({});
 
 PostTableItemPosted.args = {
-  networks: ["linkedin"],
+  networks: ["linkedIn"],
   message: "Cupidatat elit minim dolore Lorem est sit.",
   status: "posted",
   when: new Date(2020, 2, 3, 13, 11, 17),
@@ -36,7 +36,7 @@ PostTableItemPosted.args = {
 export const PostTableItemScheduled = Template.bind({});
 
 PostTableItemScheduled.args = {
-   networks: ["linkedin"],
+   networks: ["linkedIn"],
   message: "Deserunt et do mollit ad et aliqua ipsum adipisicing dolor.",
   status: "scheduled",
   when: new Date(2020, 2, 3, 13, 11, 17),
@@ -45,7 +45,7 @@ PostTableItemScheduled.args = {
 export const PostTableItemDraft = Template.bind({});
 
 PostTableItemDraft.args = {
-   networks: ["linkedin", 'twitter'],
+   networks: ["linkedIn", 'twitter'],
   message: "Aute occaecat aliquip do pariatur voluptate reprehenderit duis.",
   status: "draft",
   when: new Date(2020, 10, 9, 13, 11, 17),
@@ -54,7 +54,7 @@ PostTableItemDraft.args = {
 export const PostTableItemCancelled = Template.bind({});
 
 PostTableItemCancelled.args = {
-   networks: ["linkedin"],
+   networks: ["linkedIn"],
   message:
     "Do proident aute aliquip officia officia laboris aliquip anim officia et.",
   status: "cancelled",

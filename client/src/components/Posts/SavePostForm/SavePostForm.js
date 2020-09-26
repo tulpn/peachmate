@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import "./SavePostForm.scss";
 
-import { connect } from "react-redux"
+import { connect } from "react-redux";
 import { Field, reduxForm } from "redux-form/immutable";
 
 import validator from "./validators";
@@ -17,26 +17,26 @@ let SavePostForm = (props) => {
   let errorContent = null;
 
   if (props.error !== null && props.error !== undefined) {
-      let errorMessage = ""
-      switch (props.error.get("status")) {
-          case "form_error":
-              errorMessage = "Please fill out the message correctly."
-              break
-          default:
-              errorMessage = "Please verify that you have no errors in your form."
-      }
+    let errorMessage = "";
+    switch (props.error.get("status")) {
+      case "form_error":
+        errorMessage = "Please fill out the message correctly.";
+        break;
+      default:
+        errorMessage = "Please verify that you have no errors in your form.";
+    }
 
-      errorContent = (
-          <div className='formError'>
-              <h3>Ooops. We ran into a few errors.</h3>
-              <p>{errorMessage}</p>
-          </div>
-      )
+    errorContent = (
+      <div className="formError">
+        <h3>Ooops. We ran into a few errors.</h3>
+        <p>{errorMessage}</p>
+      </div>
+    );
   }
   return (
     <form onSubmit={handleSubmit} className="form">
       {errorContent}
-      
+
       <Field
         id="message"
         name="message"
@@ -52,13 +52,13 @@ let SavePostForm = (props) => {
         id="when"
         name="when"
         type="text"
-        label="When would you like to publish"        
+        label="When would you like to publish"
         disabled={props.loading}
         component={FieldDatePicker}
       />
 
       <div className="networkGroup">
-        <label>Select Network</label>
+        <label className="label">Select Network</label>
         <Field
           id="networkLinkedIn"
           name="networkLinkedIn"
@@ -67,27 +67,26 @@ let SavePostForm = (props) => {
           required
           disabled={props.loading}
           component={FieldComponent}
-      />
-      <Field
-        id="networkTwitter"
-        name="networkTwitter"
-        type="checkbox"
-        label="Twitter"
-        required
-        disabled={props.loading}
-        component={FieldComponent}
-     />
-
+        />
+        <Field
+          id="networkTwitter"
+          name="networkTwitter"
+          type="checkbox"
+          label="Twitter"
+          required
+          disabled={props.loading}
+          component={FieldComponent}
+        />
       </div>
 
       <div className="field">
         <div className="control">
           <Button isPrimary isLoading={props.loading}>
             Save
-            </Button>          
-            <Button isWhite isLoading={props.loading}>
+          </Button>
+          <Button isWhite isLoading={props.loading}>
             Publish now
-            </Button>    
+          </Button>
         </div>
       </div>
     </form>
@@ -107,15 +106,13 @@ SavePostForm = reduxForm({
   warn,
 })(SavePostForm);
 
-
 SavePostForm = connect(
-    (state) => ({
-        initialValues: {
-        },
-    }),
-    {
-        load: console.log,
-    }
-)(SavePostForm)
+  (state) => ({
+    initialValues: {},
+  }),
+  {
+    load: console.log,
+  }
+)(SavePostForm);
 
 export default SavePostForm;

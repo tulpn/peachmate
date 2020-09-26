@@ -44,7 +44,6 @@ export default function Save(props) {
       values.get("networkTwitter")  && "twitter"
     ].filter(i => (i !== undefined && i !== null))
 
-    console.log("Networks", networks)
     let postData = {
       message: values.get("message"),
       when: chosenWhen,
