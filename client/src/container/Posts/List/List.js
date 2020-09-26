@@ -52,7 +52,7 @@ export default function List(props) {
     if (!initialised) {
       init();
     }
-  });
+  }, []);
 
   return (
     <div className="postCnt">

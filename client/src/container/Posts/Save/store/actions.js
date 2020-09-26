@@ -45,10 +45,10 @@ export const _deletePostStart = () => {
     }
 }
 
-export const _deletePostSuccess = (payload) => {
+export const _deletePostSuccess = (payload, id) => {
     return {
         type: "DELETE_POST_SUCCESS",
-        payload: payload,
+        payload: {payload,id}
     }
 }
 
@@ -63,7 +63,7 @@ export const deletePost = (id) => {
         dispatch(_deletePostStart())
         return ApiPostStore.deleteItemById(id)
             .then((response) => {
-                dispatch(_deletePostSuccess(response.data))
+                dispatch(_deletePostSuccess(response.data, id))
             })
             .catch((error) => {
                 dispatch(_deletePostFail())

@@ -1,11 +1,12 @@
 /**
  * Removes Item from List by id
  * @param {List} list
- * @param {string} id
+ * @param {string} _id
  */
-export function removeItemInList(list, id) {
+export function removeItemInList(list, _id) {
+    
     return list.filter(item => {
-        return item.get("id") !== id
+        return item.get("_id") !== _id
     })
 }
 
@@ -17,7 +18,7 @@ export function removeItemInList(list, id) {
  */
 export function insertItemInList(list, newItem, position = 0) {
     let foundIndex = list.findIndex(function (item) {
-        return item.get("id") === newItem.get("id")
+        return item.get("_id") === newItem.get("_id")
     })
     if (foundIndex === -1) {
         list = list.insert(position, newItem)
@@ -29,12 +30,12 @@ export function insertItemInList(list, newItem, position = 0) {
 /**
  * Updates item in Immutable.js List
  * @param {List} list
- * @param {string} id
+ * @param {string} _id
  * @param {Function} callback
  */
-export function updateItemInList(list, id, callback) {
+export function updateItemInList(list, _id, callback) {
     let index = list.findIndex(function (item) {
-        return item.get("id") === id
+        return item.get("_id") === _id
     })
     if (index === -1) {
         return list
