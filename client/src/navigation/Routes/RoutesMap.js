@@ -42,7 +42,7 @@ export default [
     },
     {
         title: "Save Post",
-        path: "/posts/save",
+        path: "/posts/save/:id?",
         component: PostSave,
         exactMatch: true
     },

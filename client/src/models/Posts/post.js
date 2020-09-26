@@ -23,18 +23,25 @@ export default class Post {
     this.message = element.message || null;
 
     // always keep when as date object! (or null)
-    this.when = null
-    if (element.when instanceof Date){
-      this.when = element.when
-    } else if ( typeof element.when === String){
-      this.when = parseISO(element.when);
-    }
-
+    this.when = this.parseWhen(element.when)
 
     this.networks = element.networks || null;
     this.status = element.status || null;
     this.id = element._id || null;
   }
+
+
+  parseWhen(when){
+    if (typeof when === "string"){
+      return parseISO(when)
+    } 
+    
+    if (when instanceof Date){
+      return when
+    }
+    return null
+  }
+
 
   fromServerJSON(data) {
     this.id = data._id;

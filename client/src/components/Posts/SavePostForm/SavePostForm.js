@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import "./SavePostForm.scss";
 
 import { connect } from "react-redux";
-import { Field, reduxForm } from "redux-form/immutable";
+import { Field, reduxForm  } from "redux-form/immutable";
+
+import formatISO from 'date-fns/formatISO'
 
 import validator from "./validators";
 import warn from "./warn";
@@ -11,6 +13,8 @@ import warn from "./warn";
 import FieldComponent from "../../Forms/FieldComponent/FieldComponent";
 import FieldDatePicker from "../../Forms/FieldDatePicker/FieldDatePicker";
 import Button from "../../Button/Button";
+
+import Post from "../../../models/Posts/post"
 
 let SavePostForm = (props) => {
   const { handleSubmit } = props;
@@ -33,9 +37,12 @@ let SavePostForm = (props) => {
       </div>
     );
   }
+
   return (
     <form onSubmit={handleSubmit} className="form">
       {errorContent}
+
+      
 
       <Field
         id="message"
@@ -106,12 +113,28 @@ SavePostForm = reduxForm({
   warn,
 })(SavePostForm);
 
+/** in Edit mode, we want to set the initial values
+ * however, they are slightly different to the form because of the networks
+ * therefore we to an explicit mapping
+ */
 SavePostForm = connect(
-  (state) => ({
-    initialValues: {},
-  }),
-  {
-    load: console.log,
+  (state) => {
+    if ( state.get("posts").get("save").get("post") === null)
+    {
+      return {}
+    }
+    const p = new Post(state.get("posts").get("save").get("post").toJS())
+    const message =p.message
+    return {
+      initialValues: {
+        id: p.id,
+        message:message,
+        when: p.when,
+        networkLinkedIn: p.networks.includes("linkedin"),
+        networkTwitter: p.networks.includes('twitter'),
+      }
+     
+    }
   }
 )(SavePostForm);
 

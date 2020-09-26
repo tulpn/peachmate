@@ -7,7 +7,7 @@ Array [
   "Settings: /settings",
   "Posts: /posts",
   "Posts: /posts/list",
-  "Save Post: /posts/save",
+  "Save Post: /posts/save/:id?",
   "Calendar: /calendar",
   "Connect: /connect",
 ]

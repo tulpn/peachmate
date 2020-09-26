@@ -41,7 +41,7 @@ export default function List(props) {
   
   const onEditItemHandler = (id) => {
     console.log("Edit id", id);
-    props.history.push(`/posts/${id}`)
+    props.history.push(`/posts/save/${id}`)
   };
   const onManuallyShareItemHandler = (id) => {
     console.log("Manually Share id", id);

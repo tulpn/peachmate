@@ -6,6 +6,7 @@ export const _reset = () => {
     }
 }
 
+/** SAVE NEW POST */
 export const _savePostStart = () => {
     return {
         type: "SAVE_POST_START",
@@ -37,7 +38,7 @@ export const savePost = (postData) => {
             })
     }
 }
-
+/** DELETE POST */
 export const _deletePostStart = () => {
     return {
         type: "DELETE_POST_START",
@@ -70,7 +71,7 @@ export const deletePost = (id) => {
     }
 }
 
-
+/*** UPDATE POST */
 export const updatePostStart = () => {
     return {
         type: "UPDATE_POST_START",
@@ -90,6 +91,7 @@ export const updatePostFail = () => {
     }
 }
 
+/** CANCEL POST */
 export const cancelPost = (postData) => {
     postData = {
         ...postData,
@@ -108,7 +110,7 @@ export const cancelPost = (postData) => {
 }
 
 
-
+/** SHARE NOW POST */
 export const shareNow = (postData) => {
     postData = {
         ...postData,
@@ -122,6 +124,39 @@ export const shareNow = (postData) => {
             })
             .catch((error) => {
                 dispatch(updatePostFail())
+            })
+    }
+}
+
+/** FETCH SINGLE POST */
+export const _fetchPostStart = () => {
+    return {
+        type: "FETCH_POST_START",
+    }
+}
+
+export const _fetchPostSuccess = (payload) => {
+    return {
+        type: "FETCH_POST_SUCCESS",
+        payload: payload,
+    }
+}
+
+export const _fetchPostFail = () => {
+    return {
+        type: "FETCH_POST_FAIL",
+    }
+}
+
+export const fetchPost = (id) => {
+    return (dispatch) => {
+        dispatch(_fetchPostStart())
+        return ApiPostStore.fetch(id)
+            .then((response) => {
+                dispatch(_fetchPostSuccess(response.data))
+            })
+            .catch((error) => {
+                dispatch(_fetchPostFail())
             })
     }
 }

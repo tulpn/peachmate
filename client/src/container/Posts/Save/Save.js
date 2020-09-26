@@ -34,6 +34,17 @@ export default function Save(props) {
     state.get("posts").get("save").get("error")
   );
 
+  
+  const saved = useSelector((state) =>
+    state.get("posts").get("save").get("saved")
+  );
+
+  
+  const loaded = useSelector((state) =>
+    state.get("posts").get("save").get("loaded")
+  );
+
+
 
   const handleSubmit = (values) => {
     
@@ -56,19 +67,28 @@ export default function Save(props) {
     dispatch(postSaveActions.savePost(nP.toServerJSON()))
   };
 
+  const initPostEdit = () => {
+    console.log(props.match.params, typeof props.match.params)
+    if ( props.match.params.id !== undefined && props.match.params.id !== null){
+      // load post by id and put it in the store
+        console.log("We are in edit mode!")
+        dispatch(postSaveActions.fetchPost(props.match.params.id))
+    }
+  }
+
   const notifcationDeleteHandler = () => {
     setNotifcationMessage(null)
   }
 
   const initNotificationMessage = () => {
     let newNotifcationMessage = null
-    if (loading === false &&  ( error === undefined || error === null ) && currentPost !== null){
+    if (loading === false &&  ( error === undefined || error === null ) && currentPost !== null && saved === true){
       newNotifcationMessage = <NotificationMessage isSuccess onDelete={notifcationDeleteHandler}>
         <p>
           Post successfully saved.
         </p>
       </NotificationMessage>
-    } else if (loading === false &&  error !== null && error !== undefined ) {
+    } else if (loading === false &&  error !== null && error !== undefined && saved === false ) {
       newNotifcationMessage = <NotificationMessage isDanger onDelete={notifcationDeleteHandler}>
         <p>
           Post could not be saved. Please check for additional messages.
@@ -85,6 +105,8 @@ export default function Save(props) {
 
   // unmount only
   useEffect(() => {
+    // load initial post on mount
+    initPostEdit()
     return () => {
       // unmount & clean up
       notifcationDeleteHandler()
@@ -107,7 +129,7 @@ export default function Save(props) {
 
       <BreadCrumbs crumbs={props.crumbs} />
       {notifcationMessage}
-      <SavePostForm onSubmit={handleSubmit} loading={loading} error={error} />
+      <SavePostForm onSubmit={handleSubmit} loading={loading} error={error}  />
     </div>
   );
 }

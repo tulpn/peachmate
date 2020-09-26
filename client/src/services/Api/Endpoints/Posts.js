@@ -8,6 +8,11 @@ class PostStore extends ApiBase {
         return this.get(url)
     }
 
+    fetch  = (id) => {
+        const url = `${this.module}/post/${id}`
+        return this.get(url)
+    }
+
     /**
      * Either send POST to create new post
      * or send PUT to update existing post (by id)
