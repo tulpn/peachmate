@@ -24,14 +24,12 @@ export default class Post {
 
     // always keep when as date object! (or null)
     this.when = null
-    console.log("Constructor", element.when, element.when instanceof Date)
     if (element.when instanceof Date){
       this.when = element.when
     } else if ( typeof element.when === String){
       this.when = parseISO(element.when);
     }
 
-    console.log("Object:", this.when, typeof this.when)
 
     this.networks = element.networks || null;
     this.status = element.status || null;
@@ -54,8 +52,6 @@ export default class Post {
   }
 
   toServerJSON() {
-
-    console.log("To Server JSON", this.when, typeof this.when)
 
     return {
       _id: this.id || null,

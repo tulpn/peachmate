@@ -80,7 +80,7 @@ export default function Save(props) {
 
   useEffect(() => {
     initNotificationMessage()
-  }, [error])
+  }, [error, loading])
 
 
  
