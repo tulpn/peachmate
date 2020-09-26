@@ -62,6 +62,7 @@ export default function Save(props) {
 
   const initNotificationMessage = () => {
     let newNotifcationMessage = null
+    console.log("initNotificationMessage", loading, error, currentPost)
     if (loading === false &&  ( error === undefined || error === null ) && currentPost !== null){
       newNotifcationMessage = <NotificationMessage isSuccess onDelete={notifcationDeleteHandler}>
         <p>
@@ -80,6 +81,11 @@ export default function Save(props) {
 
   useEffect(() => {
     initNotificationMessage()
+    return () => {
+      // unmount
+      console.log("unmounting")
+      console.log("unmounting", loading, error, currentPost)
+    }
   }, [error, loading])
 
 
