@@ -8,7 +8,9 @@ describe("post save reducer", () => {
       fromJS({
         post: null,
         loading: false,
-        error: null
+        error: null, 
+        saved: null, 
+        loaded: null
       })
     );
   });
@@ -22,7 +24,9 @@ describe("post save reducer", () => {
       fromJS({
         post: null,
         loading: true,
-        error: null
+        error: null,
+        saved: null, 
+        loaded: null
       })
     );
   });
@@ -37,7 +41,9 @@ describe("post save reducer", () => {
       fromJS({
         post: { message: "Lorem Ipsum" },
         loading: false,
-        error: null
+        error: null,
+        saved: true, 
+        loaded: null
       })
     );
   });
@@ -51,6 +57,8 @@ describe("post save reducer", () => {
       fromJS({
         post: null,
         loading: false,
+        saved: false, 
+        loaded: null,
         error: {
           status: CONNECTION_ERROR
         }

@@ -9,7 +9,6 @@ export default function BreadCrumbs(props) {
     props.crumbs === null ||
     props.crumbs.length <= 1
   ) {
-    console.log("no crumbs to show");
     return null;
   }
   return (

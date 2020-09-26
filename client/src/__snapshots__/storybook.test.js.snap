@@ -11,6 +11,7 @@ exports[`Storyshots Components/BreadCrumbs Bread Crumbs Two Steps 1`] = `
     <li>
       <a
         href="/item1"
+        onClick={[Function]}
       >
         Item 1
       </a>
@@ -20,6 +21,7 @@ exports[`Storyshots Components/BreadCrumbs Bread Crumbs Two Steps 1`] = `
     >
       <a
         href="/item1/item2"
+        onClick={[Function]}
       >
         Current Item
       </a>

@@ -48,12 +48,12 @@ export default function PostTableItem(props) {
         {props.networks.map(i => {
           if ( i === "linkedIn"){
             return (
-            <span className="icon " key={i}>
+            <span className="icon " key={`${props.id}-${i}`}>
               <i className="fab fa-linkedin-in"></i>
           </span>)
           } else if (i === "twitter"){
             return (
-            <span className="icon " key={i}>
+            <span className="icon " key={`${props.id}-${i}`}>
               <i className="fab fa-twitter"></i>
           </span>)
           }

@@ -1,15 +1,15 @@
 import React from 'react';
-import { Router } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 import BreadCrumbs from './BreadCrumbs'
 
 // This default export determines where you story goes in the story list
 export default {
     title: 'Components/BreadCrumbs',
     component: BreadCrumbs,
-    //decorators: [(Story) => <Router><Story /></Router>]
+    decorators: [(Story) => <MemoryRouter initialEntries={['/']}><Story /></MemoryRouter>]
   };
   
-  const Template = (args) => <BreadCrumbs {...args} />;
+  const Template = (args) =><BreadCrumbs {...args} />;
   
   export const BreadCrumbsTwoSteps = Template.bind({});
   

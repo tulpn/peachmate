@@ -123,12 +123,13 @@ SavePostForm = connect(
     {
       return {}
     }
+    // work with a post object, to ensure correct parsing and accessing of attributes
     const p = new Post(state.get("posts").get("save").get("post").toJS())
-    const message =p.message
+
     return {
       initialValues: {
         id: p.id,
-        message:message,
+        message:p.message,
         when: p.when,
         networkLinkedIn: p.networks.includes("linkedin"),
         networkTwitter: p.networks.includes('twitter'),
