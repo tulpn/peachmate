@@ -1,6 +1,10 @@
-import React from "react";
+import React, {useEffect} from "react";
 import PropTypes from "prop-types";
 import "./Calendar.scss"
+
+import { useSelector, useDispatch } from "react-redux";
+
+import * as postListActions from "../Posts/List/store/actions"
 
 import { Calendar, dateFnsLocalizer  } from 'react-big-calendar'
 import withDragAndDrop from "react-big-calendar/lib/addons/dragAndDrop";
@@ -10,6 +14,8 @@ import parse from 'date-fns/parse'
 import startOfWeek from 'date-fns/startOfWeek'
 import getDay from 'date-fns/getDay'
 import addDays from "date-fns/addDays"
+import Post from "../../models/Posts/post";
+
 const locales = {
   'en-US': require('date-fns/locale/en-US'),
 }
@@ -25,12 +31,23 @@ const localizer = dateFnsLocalizer({
 const DnDCalendar = withDragAndDrop(Calendar);
 
 export default function CalendarContainer() {
+  const dispatch = useDispatch();
+
+  const items = useSelector((state) =>
+    state.get("posts").get("list").get("posts")
+  );
+
+
   let myEventsList = [
-    {
-      title: "Event 1",
-      start: new Date(),
-      end: addDays(new Date(), 2)
-    }
+    ...items.toJS().map(i => {
+      let p = new Post(i)
+      return {
+        title: p.message,
+        start: p.when,
+        end: p.when
+      }
+    })
+    
   ];
   
   const onEventResize = (data) => {
@@ -41,6 +58,12 @@ export default function CalendarContainer() {
   const onEventDrop = (data) => {
     console.log(data);
   };
+
+
+  useEffect(() => {
+    // on mount fetch the items once
+    dispatch(postListActions.fetchPosts());
+  }, [])
 
   return (
     <div className="calendarCnt">
