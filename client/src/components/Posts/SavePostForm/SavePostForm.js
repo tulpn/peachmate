@@ -131,7 +131,7 @@ SavePostForm = connect(
         id: p.id,
         message:p.message,
         when: p.when,
-        networkLinkedIn: p.networks.includes("linkedin"),
+        networkLinkedIn: p.networks.includes("linkedIn"),
         networkTwitter: p.networks.includes('twitter'),
       }
      

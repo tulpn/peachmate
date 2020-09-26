@@ -56,10 +56,12 @@ export default function Save(props) {
     ].filter(i => (i !== undefined && i !== null))
 
     let postData = {
+      _id: values.get("id"), 
       message: values.get("message"),
       when: chosenWhen,
       networks: networks,
     }
+    
     console.log("postData", postData)
     let nP = new Post(postData)
 
